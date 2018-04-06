@@ -2,6 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
+<<<<<<< HEAD
   "dependencies": {
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
@@ -14,3 +15,21 @@
     "eject": "react-scripts eject"
   }
 }
+=======
+  "proxy": "http://127.0.0.1:3001",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.4"
+  },
+  "scripts": {
+    "server": "node server.js",
+    "client": "node scripts/start-client.js",
+    "start": " react-scripts start",
+    "build": "node scripts/build.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
+>>>>>>> master

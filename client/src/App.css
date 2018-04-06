@@ -8,8 +8,12 @@
 }
 
 .App-header {
+<<<<<<< HEAD
   /*background-color: #222;*/
   background-color: blue;
+=======
+  background-color: #222;
+>>>>>>> master
   height: 150px;
   padding: 20px;
   color: white;
