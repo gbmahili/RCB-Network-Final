@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
-
-import './App.css';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Test from './Components/test';
 
 
-class App extends Component {
-  render() {
-    return (
-      <div >
-       <Test />
-      </div>
-    );
-  }
-}
+const App = () =>
+  <Router>
+    <div>
+      <Route exact path ='/test' component={Test} />
+    </div>
+  </Router>
+  
 
 export default App;

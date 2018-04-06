@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import API from '../../utils/routes';
+import API from '../utils/routes';
 
 class Test extends Component {
     // the testCall function is called in the componentDidMount method so it renders on load
@@ -12,6 +12,7 @@ class Test extends Component {
     testCall = () => {
         API.test().then(response => {
             console.log(response);
+        //    response.send('hello, am i working')
         })
     }
 

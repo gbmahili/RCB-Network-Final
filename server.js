@@ -1,18 +1,33 @@
 // Require Dependencies
 const express = require('express');
 const path = require('path');
+const bodyParser = require ('body-parser');
 //Configure Express
 const app = express();
 
 // Declare a PORT
 const PORT = process.env.PORT || 3001;
 
-// test route that renders hello on the page 
-// the following route is made for the server to communicate with the request coming in from the client side.
+// // Serve up static assets
+// app.use(express.static("client/build"));
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// parse application/json
+app.use(bodyParser.json());
+
+
+// this test is going to be run from the client side server
+app.post('/test', function(req, res){
+  console.log(req.body);
+})
+
+// this test is going to be run from the server side server
 app.get('/test', function(req, res){
-    res.send('Hello Im a test call created by Veena.  \nRight now we are connected to the server, Im displayed via server call.\nI believe the next thing we shall focus on is to get the appropriate file via the server call using router');
-  })
-  
+  console.log('hi i called test');
+})
+
 // Listen to the port
 app.listen(PORT, function(){
     console.log(`app listening to ${PORT}`);
