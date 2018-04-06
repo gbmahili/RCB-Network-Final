@@ -2,6 +2,7 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require ('body-parser');
+const apiRoutes = require("./routes/apiRoutes");
 //Configure Express
 const app = express();
 
@@ -17,16 +18,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // parse application/json
 app.use(bodyParser.json());
 
-
-// this test is going to be run from the client side server
-app.post('/test', function(req, res){
-  console.log(req.body);
-})
-
-// this test is going to be run from the server side server
-app.get('/test', function(req, res){
-  console.log('hi i called test');
-})
+// Use apiRoutes
+app.use("/api", apiRoutes);
 
 // Listen to the port
 app.listen(PORT, function(){
