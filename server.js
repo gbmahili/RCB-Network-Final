@@ -5,7 +5,7 @@ const bodyParser = require ('body-parser');
 // const signup = require("./routes/signup.js");
 var logger = require("morgan");
 const mongoose = require('mongoose');
-
+const routes = require("./routes");
 // Require all models
 var db = require("./model");
 
@@ -34,24 +34,8 @@ app.use(bodyParser.json());
 // Use express.static to serve the public folder as a static directory
 app.use(express.static("public"));
 // Use apiRoutes
-// app.use("/api", signup);
+app.use(routes);
 
-
-// Route to post our form submission to mongoDB via mongoose
-app.post("/submit", function(req, res) {
-  console.log(req.body)
-    // Create a new user using req.body
-    db.Users.create(req.body)
-    
-      .then(function(dbUser) {
-        // If saved successfully, send the the new User document to the client
-        res.json(dbUser);
-      })
-      .catch(function(err) {
-        // If an error occurs, send the error to the client
-        res.json(err);
-      });
-  });
 
 // Listen to the port
 app.listen(PORT, function(){
