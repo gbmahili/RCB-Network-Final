@@ -6,7 +6,7 @@ import Test from './Components/test';
 const App = () =>
   <Router>
     <div>
-      <Route exact path ='/test' component={Test} />
+      <Route exact path ='/' component={Test} />
     </div>
   </Router>
   
