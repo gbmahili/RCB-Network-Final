@@ -35,8 +35,8 @@ app.use(bodyParser.json());
 app.use(express.static("public"));
 // Use apiRoutes
 app.use(routes);
-
-
+// For uploading pictures
+require("./routes/uploadPicture")(app);
 // Listen to the port
 app.listen(PORT, function(){
     console.log(`app listening to ${PORT}`);
