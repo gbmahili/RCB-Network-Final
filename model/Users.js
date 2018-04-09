@@ -8,20 +8,21 @@ var UserSchema = new Schema({
     firstName: {
         type : String
     },
-
     lastName: {
-        type: String
-        
+        type: String        
+    },
+    UserProfilePicture: {
+        type: String        
     },
     email: {
         type: String,
         match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
-      },
-      password: {
+    },
+    password: {
         type: String,
         trim: true,
         required: "Password is Required"
-      }
+     }
 });
 
 // Export our new NewsArticle schema to be used
