@@ -22,10 +22,7 @@ module.exports = app => {
                     console.log("MONGODB_RESPONSE_NEW_URL: ", newURL.UserProfilePicture);
                     res.json(newURL);
                 }
-
             );
-            
-            
         });
         
     });
