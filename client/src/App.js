@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-<<<<<<< HEAD
+
 import logo from './logo.svg';
 import './App.css';
 import test from './meeting2.jpeg';
@@ -22,7 +22,7 @@ class App extends Component {
 }
 =======
 import {BrowserRouter as Router, Route} from 'react-router-dom';
-import Test from './Components/test';
+
 
 
 const App = () =>

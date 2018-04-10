@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\nanur\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js start
+  C:\Program Files\nodejs\node.exe C:\Users\nanur\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js install express --save
 
 PATH: 
   C:\Users\nanur\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\nanur\bin;C:\Program Files (x86)\Intel\iCLS Client;C:\Program Files\Intel\iCLS Client;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files\nodejs;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Git\cmd;C:\Program Files\MongoDB\Server\3.6\bin;C:\Users\nanur\AppData\Local\Microsoft\WindowsApps;C:\Users\nanur\AppData\Roaming\npm;C:\Program Files\Sublime Text 3;C:\Program Files\MySQL\MySQL Server 5.7\bin;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\Heroku\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
@@ -14,7 +14,32 @@ Platform:
   win32 x64
 
 npm manifest: 
-  No manifest
+  {
+    "name": "rcb-network-final",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/gbmahili/RCB-Network-Final.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/gbmahili/RCB-Network-Final/issues"
+    },
+    "homepage": "https://github.com/gbmahili/RCB-Network-Final#readme",
+    "dependencies": {
+      "body-parser": "^1.18.2",
+      "express": "^4.16.3",
+      "mongoose": "^5.0.12",
+      "path": "^0.12.7"
+    }
+  }
 
 yarn manifest: 
   No manifest
@@ -23,10 +48,9 @@ Lockfile:
   No lockfile
 
 Trace: 
-  Error: Couldn't find a package.json file in "C:\\Users\
-  anur\\Desktop\\RCB-Network-Final"
+  Error: `install` has been replaced with `add` to add new dependencies. Run "yarn add express" instead.
       at new MessageError (C:\Users\nanur\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:186:110)
-      at C:\Users\nanur\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:40048:15
+      at Object.<anonymous> (C:\Users\nanur\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:21987:13)
       at Generator.next (<anonymous>)
       at step (C:\Users\nanur\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:98:30)
       at C:\Users\nanur\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:109:13
