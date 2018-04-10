@@ -21,7 +21,36 @@ var UserSchema = new Schema({
         type: String,
         trim: true,
         required: "Password is Required"
+      }, 
+      gender: {
+          type: Boolean
+      },
+      birthday:{
+          type: Date,
+          default: Date.now
+      },
+      country:{
+          type: String
+      },
+      telephone:{
+          type: String
+      },
+      housenumber: {
+          type: String
+      },
+      streetName: {
+          type: String
+      },
+      city: {
+          type: String
+      },
+      state: {
+          type: String
+      },
+      zipcode: {
+          type: String
       }
+
 });
 
 // Export our new NewsArticle schema to be used
