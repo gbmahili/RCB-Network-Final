@@ -2,32 +2,41 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require ('body-parser');
+// const signup = require("./routes/signup.js");
+var logger = require("morgan");
+const mongoose = require('mongoose');
+const routes = require("./routes");
+// Require all models
+var db = require("./model");
+
 //Configure Express
 const app = express();
 
 // Declare a PORT
 const PORT = process.env.PORT || 3001;
 
-// // Serve up static assets
-// app.use(express.static("client/build"));
+//Configure mongoose
+//==================
+// By default mongoose uses callbacks for async queries, we're setting it to use promises (.then syntax) instead
+mongoose.Promise = Promise;
+// Connect to the Mongo DB
+const  MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/rcb";
+mongoose.connect(MONGODB_URI)
 
+//Configure middleware
+//====================
+// Use morgan logger for logging requests
+app.use(logger("dev"));
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
-
 // parse application/json
 app.use(bodyParser.json());
-
-
-// this test is going to be run from the client side server
-app.post('/test', function(req, res){
-  console.log(req.body);
-})
-
-// this test is going to be run from the server side server
-app.get('/test', function(req, res){
-  console.log('hi i called test');
-})
-
+// Use express.static to serve the public folder as a static directory
+app.use(express.static("public"));
+// Use apiRoutes
+app.use(routes);
+// For uploading pictures
+require("./routes/uploadPicture")(app);
 // Listen to the port
 app.listen(PORT, function(){
     console.log(`app listening to ${PORT}`);

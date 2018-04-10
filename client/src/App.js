@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { Component } from 'react';
 
 import logo from './logo.svg';
@@ -24,14 +25,26 @@ class App extends Component {
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 
 
+=======
+import React from 'react';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+import Test from './Components/test';
+import Form from './Components/form';
+import Portfolio from './Components/Porfolio';
+>>>>>>> master
 
 const App = () =>
   <Router>
     <div>
-      <Route exact path ='/test' component={Test} />
+      <Route exact path ='/' component={Form} />
+      <Route exact path ='/' component={Test} />
+      <Route exact path='/uploaded' component={Portfolio} />
     </div>
   </Router>
+<<<<<<< HEAD
   
+>>>>>>> master
+=======
 >>>>>>> master
 
 export default App;
