@@ -50,6 +50,9 @@ var UserSchema = new Schema({
       },
       zipcode: {
           type: String
+      },
+    UserProfilePicture: {
+          type: String
       }
 
 });
