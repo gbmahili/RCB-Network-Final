@@ -2,8 +2,6 @@
 import React from "react";
 
 class UserLogin extends React.Component {
-
-
         state = {
             firstName: "",
             lastName: "",
