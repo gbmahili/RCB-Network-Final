@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
-import API from '../utils/routes';
+import React from 'react';
+// import API from '../utils/routes';
 
-class Test extends Component {
+class Test extends React.Component {
     state ={
         firstName:  'Veena',
         lastName: 'Uppalapati'

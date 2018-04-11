@@ -37,6 +37,7 @@ app.use(express.static("public"));
 app.use(routes);
 // For uploading pictures
 require("./routes/uploadPicture")(app);
+require("./routes/Server.UserLogin")(app);
 // Listen to the port
 app.listen(PORT, function(){
     console.log(`app listening to ${PORT}`);

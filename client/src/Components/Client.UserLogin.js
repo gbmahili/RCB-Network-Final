@@ -3,10 +3,8 @@ import React from "react";
 
 class UserLogin extends React.Component {
 
-    constructor(props) {
-        super(props);
 
-        this.state = {
+        state = {
             firstName: "",
             lastName: "",
             userEmail : "",
@@ -15,7 +13,7 @@ class UserLogin extends React.Component {
             userProfilePicture: "",
             userProfession: ''
         };
-    };
+    
 
     handleInputChange = event => {
         // Pull the name and value properties off of the event.target (the element which triggered the event)
@@ -28,7 +26,7 @@ class UserLogin extends React.Component {
     };
 
     // Upload Image to Cloudability and the url to the user's account:
-    handleLogin(e) {
+    handleLogin = e => {
         e.preventDefault();
         // 1.  UPLOAD THE IMAGE TO CLOUDABILITY:
         const loginInfo = {
@@ -54,8 +52,8 @@ class UserLogin extends React.Component {
                     currentUserId: body._id,
                     firstName: body.firstName,
                     lastName: body.lastName,
-                    userProfilePicture: body.UserProfilePicture,
-                    userProfession: body.profession
+                    userProfilePicture: body.UserProfilePicture
+                    // userProfession: body.profession
                 }, () => {
                     //document.getElementById('close').click();
                     //document.getElementById("profilePicture").setAttribute("src", body.UserProfilePicture);
@@ -73,7 +71,7 @@ class UserLogin extends React.Component {
             <div className="row">
                 <form className="col s12 m6 offset-m3">
                     <div className="row"> 
-                        <div class="input-field col s12">
+                        <div className="input-field col s12">
                         <input
                             type="text"
                             placeholder="Email"
@@ -82,16 +80,16 @@ class UserLogin extends React.Component {
                             onChange={this.handleInputChange}
                         />
                     </div>
-                    <div class="input-field col s12">
+                    <div className="input-field col s12">
                         <input
                             type="password"
                             placeholder="Password"
-                            name="userEmail"
-                            value={this.state.userEmail}
+                            name="password"
+                            value={this.state.password}
                             onChange={this.handleInputChange}
                         />
                     </div>
-                    <div class="input-field col s12">
+                    <div className="input-field col s12">
                         <button className="btn" onClick={this.handleLogin}>Login</button>
                     </div>
                     </div>
@@ -100,6 +98,8 @@ class UserLogin extends React.Component {
         );
     };
 };
+
+
 
 // Export for others to use:
 export default UserLogin;
