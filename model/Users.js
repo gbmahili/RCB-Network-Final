@@ -24,11 +24,10 @@ var UserSchema = new Schema({
         required: "Password is Required"
       }, 
       gender: {
-          type: Boolean
+          type: String
       },
       birthday:{
-          type: Date,
-          default: Date.now
+          type: String
       },
       country:{
           type: String

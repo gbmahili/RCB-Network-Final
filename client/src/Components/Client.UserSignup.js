@@ -6,7 +6,17 @@ class Signup extends React.Component {
     firstName: "",
     lastName: "",
     email: "",
-    password: ""
+    password: "",
+    gender :"",
+    dateOfBirth: "",
+    country: "",
+    telephone: "",
+    houseNumber: "",
+    streetName: "",
+    city: "",
+    stateName: "",
+    zipCode: ""
+
   };
 
   handleInput = event => {
@@ -24,7 +34,16 @@ class Signup extends React.Component {
       firstName : this.state.firstName,
       lastName : this.state.lastName,
       email : this.state.email,
-      password : this.state.password
+      password : this.state.password,
+      gender: this.state.gender,
+      dateOfBirth: this.state.dateOfBirth,
+      country: this.state.country,
+      telephone: this.state.telephone,
+      houseNumber: this.state.houseNumber,
+      streetName: this.state.streetName,
+      city: this.state.city,
+      stateName: this.state.stateName,
+      zipCode: this.state.zipCode
     };
 
     // Send to the server
@@ -39,18 +58,27 @@ class Signup extends React.Component {
       })
       .then(res => res.json())
       .then(body => {
-        console.log(body)
-        localStorage.setItem("RCB_NETWORK_PROFILE_PICUTURE", body.UserProfilePicture)
+        console.log(body)        
         // Update the state with the data from the database
         this.setState({
           firstName: body.firstName,
           lastName: body.lastName,
           email: body.email,
-          password: body.password
+          password: body.password,
+          gender: body.gender,
+          dateOfBirth: body.dateOfBirth,
+          country: body.country,
+          telephone: body.telephone,
+          houseNumber: body.houseNumber,
+          streetName: body.streetName,
+          city: body.city,
+          stateName: body.stateName,
+          zipCode: body.zipCode
         }, () => {
           console.log(body)
+          localStorage.setItem("RCB_NETWORK_PROFILE_PICUTURE", JSON.stringify(body))
           window.location.href = "/porfolio";
-          console.log("STATE UPDATED")
+          console.log("STATE UPDATED");
         });
 
       });//end of response
@@ -111,24 +139,24 @@ class Signup extends React.Component {
 
           <div className="row">
             <div className="input-field col m6 s12">
-              <input id="gender" name="gender" type="text" className="materialize-textarea grey-text" />
+              <input id="gender" onChange={this.handleInput} name="gender" value={this.state.gender} type="text" className="materialize-textarea grey-text" />
               <label className="grey-text darken-3" htmlFor="gender">Gender
                 <span className=" purple-text">*</span>
               </label>
             </div>
             <div className="grey-text input-field col m6 s12">
-              <input type="text" className="datepicker darken-3" id="date_of_birth" name="date_of_birth" />
+              <input type="text" className="datepicker darken-3" id="date_of_birth" name="dateOfBirth" onChange={this.handleInput} value={this.state.dateOfBirth}/>
               <label htmlFor="date_of_birth">Enter your Birthday</label>
             </div>
           </div>
 
           <div className="row">
             <div className="input-field col m6 s12">
-              <input id="country" className="grey-text darken-3" type="text" />
+              <input id="country" className="grey-text darken-3" type="text" name="country" onChange={this.handleInput} value={this.state.country}/>
               <label className="grey-text darken-3" htmlFor="country">Country</label>
             </div>
             <div className="input-field col m6 s12">
-              <input id="telephone" className="grey-text darken-3" type="text" />
+              <input id="telephone" className="grey-text darken-3" type="text" name="telephone" onChange={this.handleInput} value={this.state.telephone}/>
               <label className="grey-text darken-3" htmlFor="telephone">Telephone ( ex. 732-999-9999)
             </label>
             </div>
@@ -136,26 +164,26 @@ class Signup extends React.Component {
 
           <div className="row">
             <div className="input-field col m6 s12">
-              <input id="house_number" className="grey-text darken-3" type="text" name="house_number" />
+              <input id="house_number" className="grey-text darken-3" type="text" name="houseNumber" onChange={this.handleInput} value={this.state.houseNumber} />
               <label className="grey-text darken-3" htmlFor="house_number">House Number</label>
             </div>
             <div className="input-field col m6 s12">
-              <input id="street_name" className="grey-text darken-3" type="text" name="street_name" />
+              <input id="street_name" className="grey-text darken-3" type="text" name="streetName" onChange={this.handleInput} value={this.state.streetName} />
               <label className="grey-text darken-3" htmlFor="street_name">Street Name</label>
             </div>
           </div>
 
           <div className="row">
             <div className="input-field col m4 s12">
-              <input id="city" className="grey-text darken-3" type="text" />
+              <input id="city" className="grey-text darken-3" type="text" name="city" onChange={this.handleInput} value={this.state.city}/>
               <label className="grey-text darken-3" htmlFor="city">City</label>
             </div>
             <div className="input-field col m4 s12">
-              <input id="state" className="grey-text darken-3" type="text" />
-              <label className="grey-text darken-3" htmlFor="state">state</label>
+              <input id="stateName" className="grey-text darken-3" type="text" name="stateName" onChange={this.handleInput} value={this.state.stateName}/>
+              <label className="grey-text darken-3" htmlFor="state">stateName</label>
             </div>
             <div className="input-field col m4 s12">
-              <input id="zipcode" className="grey-text darken-3" type="text" />
+              <input id="zipcode" className="grey-text darken-3" type="text" name="zipCode" onChange={this.handleInput} value={this.state.zipCode}/>
               <label className="grey-text darken-3" htmlFor="zipcode">Zip Code</label>
             </div>
           </div>
