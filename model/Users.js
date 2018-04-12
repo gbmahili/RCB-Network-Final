@@ -12,14 +12,48 @@ var UserSchema = new Schema({
     lastName: {
         type: String        
     },
-    professions: [
-        {
-          // Store ObjectIds in the array
-          type: Schema.Types.ObjectId,
-          // The ObjectIds will refer to the ids in the Note model
-          ref: "Professions"
-        }
-      ]
+    UserProfilePicture: {
+        type: String        
+    },
+    email: {
+        type: String,
+        match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
+    },
+    password: {
+        type: String,
+        trim: true,
+        required: "Password is Required"
+      }, 
+      gender: {
+          type: String
+      },
+      birthday:{
+          type: String
+      },
+      country:{
+          type: String
+      },
+      telephone:{
+          type: String
+      },
+      housenumber: {
+          type: String
+      },
+      streetName: {
+          type: String
+      },
+      city: {
+          type: String
+      },
+      state: {
+          type: String
+      },
+      zipcode: {
+          type: String
+      },
+    UserProfilePicture: {
+          type: String
+      }
 
 });
 

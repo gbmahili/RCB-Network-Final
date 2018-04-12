@@ -59,7 +59,7 @@ class Form extends Component {
     
     render(){
         return (
-            <form>
+            <form className="card">
             <input
               type="text"
               placeholder="First Name"
