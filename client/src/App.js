@@ -4,7 +4,7 @@ import Test from './Components/test';
 import Form from './Components/form';
 import Portfolio from './Components/Porfolio';
 import UserLogin from './Components/Client.UserLogin';
-import Signup from './Components/signup';
+import Signup from './Components/Client.UserSignup';
 
 
 const App = () =>
@@ -12,7 +12,7 @@ const App = () =>
     <div>
       <Route exact path ='/' component={Form} />
       <Route exact path ='/' component={Test} />
-      <Route exact path='/uploaded' component={Portfolio} />
+      <Route exact path='/porfolio' component={Portfolio} />
       <Route exact path='/login' component={UserLogin} />
       <Route exact path='/signup' component= {Signup}/>
     </div>
