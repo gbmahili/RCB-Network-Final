@@ -1,6 +1,30 @@
 import React from 'react';
 
 class Signup extends React.Component {
+  state={
+    first_Name:"",
+    last_Name:"",
+    email:"",
+    password:""
+  };
+
+  handleInput = event => {
+    const {name,value}= event.target
+    this.setState({
+      [name]: value
+    });
+
+  };
+  signUp = e => {
+    e.preventDefault;
+    const first_Name=this.state.first_Name;
+    const last_Name=this.state.last_Name;
+    const email=this.state.email;
+    const password=this.state.password;
+    console.log(first_Name, last_Name, email, password);
+  };
+
+
 	render(){
 		return(
       
@@ -27,14 +51,14 @@ class Signup extends React.Component {
             <div className="row">
             
                 <div className="input-field col m6 s12">
-                  <input className="grey-text darken-3" id="first_name" name="first_name" type="text"/>
+                  <input className="grey-text darken-3" id="first_name" onChange = {this.handleInput} name="first_name" value={this.state.first_name} type="text"/>
                   <label className="grey-text" forHTML="first_name">First Name
                     <span className=" purple-text">*</span>
                   </label>
                 </div>
 
                 <div className="input-field col m6 s12">
-                  <input className="grey-text darken-3" id="last_name" name="last_name" type="text"/>
+                  <input className="grey-text darken-3" id="last_name" onChange = {this.handleInput} name="last_name" value={this.state.last_name} type="text"/>
                   <label className="grey-text" forHTML="last_name">Last Name
                     <span className=" purple-text">*</span>
                   </label>
@@ -43,14 +67,14 @@ class Signup extends React.Component {
 
             <div className="row">
                 <div className="input-field validate col m6 s12">
-                  <input className="grey-text darken-3" id="email" name="email" type="email"/>
+                  <input className="grey-text darken-3" id="email" onChange = {this.handleInput} name="email" value={this.state.email} type="email"/>
                   <label className="grey-text" forHTML="email">Email
                     <span className=" purple-text">*</span>
                   </label>
                 </div>
             
             <div className="input-field col m6 s12">
-              <input id="password" name="password" type="password" className="materialize-textarea grey-text"/>
+              <input id="password" onChange = {this.handleInput} name="password" type="password" value={this.state.password} className="materialize-textarea grey-text"/>
               <label className="grey-text darken-3" forHTML="password">Create Password
                 <span className=" purple-text">*</span>
               </label>
@@ -120,7 +144,8 @@ class Signup extends React.Component {
               </div>
             </div>
 
-          <center><a  className="btn blue" id="signUpBtn">Sign Up</a></center>
+          <center><a  onClick={this.signup} className="btn blue" id="signUpBtn">Sign Up</a></center>
+
 
 
              </form>
