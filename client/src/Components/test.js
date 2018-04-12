@@ -12,7 +12,8 @@ class Test extends React.Component {
     // because we are not able to properly route the appropriate files using React router
     render() {
         return (
-            <div>
+            <div className="card">
+                <hr/>
                 <h1>Hello, I 'm Veena!</h1>
                 <p>I'm Testing</p>
                 
