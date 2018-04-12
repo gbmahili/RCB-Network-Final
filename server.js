@@ -38,6 +38,7 @@ app.use(routes);
 // For uploading pictures
 require("./routes/uploadPicture")(app);
 require("./routes/Server.UserLogin")(app);
+require("./routes/Server.UserSignup")(app);
 // Listen to the port
 app.listen(PORT, function(){
     console.log(`app listening to ${PORT}`);
