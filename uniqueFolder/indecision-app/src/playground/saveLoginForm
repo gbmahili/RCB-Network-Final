@@ -18,7 +18,7 @@ export default class LoginForm extends React.Component {
       <div>
         <form onSubmit={this.handleLoginSubmit}>
           <input type="text" name="option" />
-          <button>Login here</button>
+          <button>Login here!!</button>
         </form>
       </div>
     );
