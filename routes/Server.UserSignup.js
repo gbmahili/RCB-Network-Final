@@ -9,7 +9,9 @@ module.exports = app => {
         // let newData = { 'password': loginInfo.userPassword };
         //Send data to the database
         db.Users.create(signupInfo, (err, doc) => {
-            if (err) return res.send(500, { error: err });
+            if (err) {
+                res.json({error: err.message})
+            };
             res.json(doc);
         });
 
