@@ -4,12 +4,36 @@ import API from '../utils/routes';
 class Form extends Component {
     state = {
         firstName: "",
-        lastName: ""
+        lastName: "",
+        profession: ''
       };
 
+    testCall = () => {
+        const userobject = {
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,  
+            title: this.state.profession
+   
+        } 
+    
+          // handle the clientside request
+          API.test({userobject}).then(response => {
+            console.log(response);
+            console.log(response.data.firstName)
+            
 
-        // In this testcall function we are getting the response for /test route and console logging the response
-        // since there is nothing in the response the log won't display anything
+        })
+       
+    }
+
+    profCall = () => {
+        const profobject = {
+            title: this.state.profession
+        }
+        API.test({profobject}).then(res => {
+            console.log(res)
+        })
+    }
         
     // handle any changes to the input fields
     handleInputChange = event => {
@@ -25,18 +49,12 @@ class Form extends Component {
     // When the form is submitted, prevent the default event and alert the username and password
     handleFormSubmit = event => {
         event.preventDefault();
-        const userobject = {
-            firstName: this.state.firstName,
-            lastName: this.state.lastName
-        }
-        console.log(`Username: ${this.state.firstName}\nPassword: ${this.state.lastName}`);
-                // handle the clientside request
-                API.test({userobject}).then(response => {
-                    console.log(response);
-                    console.log(response.data.firstName)
-                //    response.send('hello, am i working')
-                })
-
+        
+        // console.log(`Username: ${this.state.firstName}\nPassword: ${this.state.lastName}`);
+        this.testCall()
+        // console.log(`Profession: ${this.state.profession}`)
+        this.profCall()
+              
     }
     
     render(){
@@ -54,6 +72,13 @@ class Form extends Component {
               placeholder="Last Name"
               name="lastName"
               value={this.state.lastName}
+              onChange={this.handleInputChange}
+            />
+            <input
+              type="text"
+              placeholder="profession"
+              name="profession"
+              value={this.state.profession}
               onChange={this.handleInputChange}
             />
             <button onClick={this.handleFormSubmit}>Submit</button>

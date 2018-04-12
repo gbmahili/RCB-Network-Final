@@ -1,6 +1,7 @@
-// Exporting an object containing all of our models
+
+  // Exporting an object containing all of our models
 
 module.exports = {
-    Users: require("./Users")
-  };
-  
+  Users: require("./Users"),
+  Professions: require("./Professions")
+};

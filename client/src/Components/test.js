@@ -4,7 +4,7 @@ import API from '../utils/routes';
 class Test extends Component {
     state ={
         firstName:  'Veena',
-        lastName: 'Uppalapati'
+        lastName: 'Uppalapati',
     }
 
 
