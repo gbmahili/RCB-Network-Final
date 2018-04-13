@@ -1,0 +1,76 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\barak\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js build
+
+PATH: 
+  C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\barak\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Git\cmd;C:\Program Files\nodejs;C:\Program Files\MongoDB\Server\3.6\bin;C:\Users\barak\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Heroku\bin;C:\Users\barak\AppData\Roaming\npm;C:\Program Files\Microsoft VS Code\bin;C:\Users\barak\AppData\Local\atom\bin;C:\Users\barak\AppData\Local\GitHubDesktop\bin
+
+Yarn version: 
+  1.5.1
+
+Node version: 
+  6.11.4
+
+Platform: 
+  win32 x64
+
+npm manifest: 
+  {
+    "name": "rcb-network-final",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "start": "node server.js",
+      "client": "cd client && npm run start",
+      "build": "cd client && npm run build",
+      "server": "nodemon server.js",
+      "nytreact": "npm start --prefix nytreact",
+      "dev": "concurrently \"npm run server\" \"npm run nytreact\""
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/gbmahili/RCB-Network-Final.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/gbmahili/RCB-Network-Final/issues"
+    },
+    "homepage": "https://github.com/gbmahili/RCB-Network-Final#readme",
+    "dependencies": {
+      "axios": "^0.18.0",
+      "body-parser": "^1.18.2",
+      "express": "^4.16.3",
+      "mongoose": "^5.0.12",
+      "morgan": "^1.9.0",
+      "path": "^0.12.7",
+      "cors": "^2.8.4",
+      "express-fileupload": "^0.4.0",
+      "concurrently": "^3.5.1",
+      "react-scripts": "1.1.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: Command failed.
+  Exit code: 1
+  Command: C:\WINDOWS\system32\cmd.exe
+  Arguments: /d /s /c cd client && npm run build
+  Directory: D:\Learning\Rutgers University\Coding Bootcamp\HOMEWORKS\Project 3\RCB-Network-Final
+  Output:
+  
+      at ProcessTermError.Error (native)
+      at ProcessTermError.MessageError (C:\Users\barak\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:186:110)
+      at new ProcessTermError (C:\Users\barak\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:226:113)
+      at ChildProcess.<anonymous> (C:\Users\barak\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:30281:17)
+      at emitTwo (events.js:106:13)
+      at ChildProcess.emit (events.js:191:7)
+      at maybeClose (internal/child_process.js:920:16)
+      at Process.ChildProcess._handle.onexit (internal/child_process.js:230:5)
