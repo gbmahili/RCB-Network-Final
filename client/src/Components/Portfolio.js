@@ -11,20 +11,32 @@ import GBMHead from "./GBMHead";
 // Instantiate cloudinary variables
 const CLOUDINARY_UPLOAD_PRESET = 'rcbnetworkfinal';
 const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/gbmahili/upload';
-
+const userData = JSON.parse(localStorage.getItem("RCB_USER"));
 // Component
 class Portfolio extends React.Component {
 
     constructor(props) {
         super(props);
 
-        this.state = {
-            firstName: "",
-            lastName: "",
-            currentUserId: '',
-            uploadedFile: null,
-            uploadedFileCloudinaryUrl: ''
-        };
+        if (userData) {
+            this.state = {
+                firstName: userData.firstName,
+                lastName: userData.lastName,
+                currentUserId: userData._id,
+                uploadedFile: null,
+                uploadedFileCloudinaryUrl: userData.UserProfilePicture
+            };
+        }else{
+            this.state = {
+                firstName: "",
+                lastName: "",
+                currentUserId: "",
+                uploadedFile: null,
+                uploadedFileCloudinaryUrl: "",
+            };
+        }
+
+        
         
     };
     // ImageDropping Function from cloudability
@@ -74,6 +86,7 @@ class Portfolio extends React.Component {
                             lastName: body.lastName,
                             uploadedFileCloudinaryUrl: body.UserProfilePicture
                         }, ()=> {
+                            console.log(this.state.currentUserId)
                             document.getElementById('close').click();
                             document.getElementById("profilePicture").setAttribute("src", body.UserProfilePicture);
                             console.log("MONGODB UPDATED WITH: ", this.state.uploadedFileCloudinaryUrl, body.UserProfilePicture)                            
@@ -86,10 +99,13 @@ class Portfolio extends React.Component {
    
     // Render Components
     render() {
-        // let userData = localStorage.getItem("RCB_USER");
-        let userData = JSON.parse(localStorage.getItem("RCB_USER"));        
-        let isLoggedIn = userData._id;
-        console.log(userData)
+        let isLoggedIn;        
+        if (localStorage.getItem("RCB_USER")) {
+            let userData = JSON.parse(localStorage.getItem("RCB_USER"));
+            isLoggedIn = userData._id;
+        }else{
+            isLoggedIn = "";
+        }
 
         let userPortfolio;
         if (isLoggedIn) {
