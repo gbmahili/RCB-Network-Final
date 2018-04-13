@@ -33,6 +33,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 // Use express.static to serve the public folder as a static directory
 //app.use(express.static("public"));
+app.use(express.static(path.resolve(__dirname, "client/build")));
 // Use apiRoutes
 app.use(routes);
 // For uploading pictures
