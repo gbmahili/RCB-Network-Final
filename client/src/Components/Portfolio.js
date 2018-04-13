@@ -24,14 +24,6 @@ class Portfolio extends React.Component {
         };
         
     };
-    // When this component updates, update the url:
-    // componentDidUpdate() {
-    //     console.log("AFTER COMPONENT UPDATES:" ,this.state.uploadedFileCloudinaryUrl)
- 
-    // };
-
-    
-
     // ImageDropping Function from cloudability
     onImageDrop(files) {
         this.setState({
@@ -71,8 +63,7 @@ class Portfolio extends React.Component {
                     })
                     .then(res => res.json())
                     .then(body => {
-                        console.log(body)
-                        localStorage.setItem("RCB_NETWORK_PROFILE_PICUTURE", body.UserProfilePicture)
+                        console.log(body)                        
                         // Update the state with the data from the database
                         this.setState({
                             currentUserId: body._id,
@@ -82,33 +73,68 @@ class Portfolio extends React.Component {
                         }, ()=> {
                             document.getElementById('close').click();
                             document.getElementById("profilePicture").setAttribute("src", body.UserProfilePicture);
-                            console.log("MONGODB UPDATED WITH: ", this.state.uploadedFileCloudinaryUrl, body.UserProfilePicture)
-                            
+                            console.log("MONGODB UPDATED WITH: ", this.state.uploadedFileCloudinaryUrl, body.UserProfilePicture)                            
                         });
                         
                     });//end of response
             }
         });
     }
+   
     // Render Components
     render() {
+        let userData = localStorage.getItem("RCB_USER");
+        // let userData = JSON.parse(localStorage.getItem("RCB_USER"));        
+        let isLoggedIn = userData._id;
+        console.log(userData)
+
+        let userPortfolio;
+        if (isLoggedIn) {
+
+            userPortfolio = (
+                <div className="row">
+                    <div className="col s12 m4">
+                        <UserPicture
+                            uploadedFileCloudinaryUrl={this.state.uploadedFileCloudinaryUrl}
+                            firstName={this.state.firstName}
+                            lastName={this.state.lastName}
+                            onImageDrop={this.onImageDrop.bind(this)}
+                        />
+                    </div>
+                    <div className="col s12 m8">
+                        <UserAbout
+                            firstName={this.state.firstName}
+                            lastName={this.state.lastName}
+                        />
+                    </div>
+                </div>
+            )
+        } else {
+            userPortfolio = (
+                <h2>Hey man! Sign in to see this section</h2>
+            )
+        }
+
         return (
-            <div className="row">
-                <div className="col s12 m4">
-                    <UserPicture
-                        uploadedFileCloudinaryUrl={this.state.uploadedFileCloudinaryUrl}
-                        firstName={this.state.firstName}
-                        lastName={this.state.lastName}
-                        onImageDrop={this.onImageDrop.bind(this)}
-                    />
-                </div>
-                <div className="col s12 m8">
-                    <UserAbout 
-                        firstName={this.state.firstName}
-                        lastName={this.state.lastName}
-                    />
-                </div>
+            <div>                
+                {userPortfolio}
             </div>
+            // <div className="row">
+            //     <div className="col s12 m4">
+            //         <UserPicture
+            //             uploadedFileCloudinaryUrl={this.state.uploadedFileCloudinaryUrl}
+            //             firstName={this.state.firstName}
+            //             lastName={this.state.lastName}
+            //             onImageDrop={this.onImageDrop.bind(this)}
+            //         />
+            //     </div>
+            //     <div className="col s12 m8">
+            //         <UserAbout 
+            //             firstName={this.state.firstName}
+            //             lastName={this.state.lastName}
+            //         />
+            //     </div>
+            // </div>
         );
     };
 };
