@@ -3,17 +3,26 @@ const db = require('../model');
 const mongoose = require("../controllers/mongoose");
 module.exports = app => {
     app.post('/userSignup', (req, res) => {
+        // Get sign up information
         let signupInfo = req.body
-        console.log("LOGIN_INFO: ", signupInfo);
-        // let query = { "email": loginInfo.userEmail }
-        // let newData = { 'password': loginInfo.userPassword };
-        //Send data to the database
-        db.Users.create(signupInfo, (err, doc) => {
-            if (err) {
-                res.json({error: err.message})
-            };
-            res.json(doc);
+        let query = { "email": signupInfo.email }
+        db.Users.findOne(query, (err, users) => {
+            // Check if the db has the user:            
+            if (users) {
+                console.log("SIGN_UP EMAIL", signupInfo.email)
+                console.log("DB EMAIL", users.email)
+                res.json({ "Error": "There is a user with that email. Please login instead." })
+                return;
+            } else {
+                //Send data to the database
+                db.Users.create(signupInfo, (err, doc) => {
+                    if (err) {
+                        res.json({ error: err.message })
+                    };
+                    res.json(doc);
+                });
+            }
+            
         });
-
     });
 };

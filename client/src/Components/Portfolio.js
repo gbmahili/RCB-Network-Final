@@ -5,11 +5,14 @@ import request from 'superagent';
 // Get child components
 import UserPicture from "./UserPicture";
 import UserAbout from "./AboutUser";
+import InformationSection from "./InformationSection";
+import GBMHead from "./GBMHead";
 
 // Instantiate cloudinary variables
 const CLOUDINARY_UPLOAD_PRESET = 'rcbnetworkfinal';
 const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/gbmahili/upload';
 
+// Component
 class Portfolio extends React.Component {
 
     constructor(props) {
@@ -83,14 +86,13 @@ class Portfolio extends React.Component {
    
     // Render Components
     render() {
-        let userData = localStorage.getItem("RCB_USER");
-        // let userData = JSON.parse(localStorage.getItem("RCB_USER"));        
+        // let userData = localStorage.getItem("RCB_USER");
+        let userData = JSON.parse(localStorage.getItem("RCB_USER"));        
         let isLoggedIn = userData._id;
         console.log(userData)
 
         let userPortfolio;
         if (isLoggedIn) {
-
             userPortfolio = (
                 <div className="row">
                     <div className="col s12 m4">
@@ -108,33 +110,25 @@ class Portfolio extends React.Component {
                         />
                     </div>
                 </div>
-            )
+            );
         } else {
             userPortfolio = (
-                <h2>Hey man! Sign in to see this section</h2>
-            )
-        }
-
+                <InformationSection
+                    windowStyle="row red white-text"
+                    informationTitle="Not Logged In"
+                    mainMessage="It looks like you are not logged in. Please login to see this page!"
+                    createAccountInfo="No account? No problem. Click Sign up to create one."
+                    loginButton="Login"
+                    signupButton="Sign Up"
+                />
+            );
+        };
+        // Render one document
         return (
-            <div>                
+            <div>
+                <GBMHead />                
                 {userPortfolio}
             </div>
-            // <div className="row">
-            //     <div className="col s12 m4">
-            //         <UserPicture
-            //             uploadedFileCloudinaryUrl={this.state.uploadedFileCloudinaryUrl}
-            //             firstName={this.state.firstName}
-            //             lastName={this.state.lastName}
-            //             onImageDrop={this.onImageDrop.bind(this)}
-            //         />
-            //     </div>
-            //     <div className="col s12 m8">
-            //         <UserAbout 
-            //             firstName={this.state.firstName}
-            //             lastName={this.state.lastName}
-            //         />
-            //     </div>
-            // </div>
         );
     };
 };
