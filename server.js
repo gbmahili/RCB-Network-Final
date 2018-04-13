@@ -40,6 +40,10 @@ app.use(routes);
 require("./routes/uploadPicture")(app);
 require("./routes/Server.UserLogin")(app);
 require("./routes/Server.UserSignup")(app);
+app.get("*", (req, res) => {
+    // res.sendFile(path.resolve(__dirname, "client/build", "index.html"));
+    res.sendFile(path.resolve(__dirname, "client/build", "index.html"));
+})
 // Listen to the port
 app.listen(PORT, function(){
     console.log(`app listening to ${PORT}`);
