@@ -29,7 +29,7 @@ class UserLogin extends React.Component {
         // 1.  UPLOAD THE IMAGE TO CLOUDABILITY:
         const loginInfo = {
             userEmail : this.state.userEmail,
-            userPassword : this.state.password
+            userPassword: this.state.userPassword
         }
         // 2. Send file name to the dababase 
         fetch("/userLogin",
@@ -44,7 +44,8 @@ class UserLogin extends React.Component {
             .then(res => res.json())
             .then(body => {
                 console.log(body)
-                localStorage.setItem("RCB_NETWORK_PROFILE_PICUTURE", body.UserProfilePicture)
+                localStorage.removeItem("RCB_USER");
+                localStorage.setItem("RCB_USER", JSON.stringify(body));
                 // Update the state with the data from the database
                 this.setState({
                     currentUserId: body._id,
@@ -53,6 +54,9 @@ class UserLogin extends React.Component {
                     userProfilePicture: body.UserProfilePicture
                     // userProfession: body.profession
                 }, () => {
+                    if(this.state.currentUserId){
+                        window.location.href = "/portfolio"
+                    }
                     //document.getElementById('close').click();
                     //document.getElementById("profilePicture").setAttribute("src", body.UserProfilePicture);
                     // Redirect user to the portfolio page
@@ -66,7 +70,7 @@ class UserLogin extends React.Component {
     // Render Components
     render() {
         return (
-            <div className="row">
+            <div className="row card">
                 <form className="col s12 m6 offset-m3">
                     <div className="row"> 
                         <div className="input-field col s12">
@@ -82,8 +86,8 @@ class UserLogin extends React.Component {
                         <input
                             type="password"
                             placeholder="Password"
-                            name="password"
-                            value={this.state.password}
+                            name="userPassword"
+                            value={this.state.userPassword}
                             onChange={this.handleInputChange}
                         />
                     </div>

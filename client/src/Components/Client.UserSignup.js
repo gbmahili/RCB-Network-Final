@@ -77,7 +77,7 @@ class Signup extends React.Component {
         }, () => {
           console.log(body)
           localStorage.setItem("RCB_NETWORK_PROFILE_PICUTURE", JSON.stringify(body))
-          window.location.href = "/porfolio";
+          window.location.href = "/portfolio";
           console.log("STATE UPDATED");
         });
 
