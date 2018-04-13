@@ -105,9 +105,8 @@ class Portfolio extends React.Component {
             isLoggedIn = userData._id;
         }else{
             isLoggedIn = "";
-            let currentState = this.state;
         }
-        
+
         let userPortfolio;
         if (isLoggedIn) {
             userPortfolio = (
