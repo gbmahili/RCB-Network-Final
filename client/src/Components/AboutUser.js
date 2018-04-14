@@ -11,7 +11,7 @@ class UserAbout extends React.Component {
                     </div>
                     <div className="card-action">
                         <a className="waves-effect waves-light modal-trigger" href="#modal1">Add Resume</a>
-                        <a className="waves-effect waves-light modal-trigger" href="#modal1">Current Resumes</a>
+                        <a className="waves-effect waves-light modal-trigger" href="#modal1">Current Resumes - COMMING SOON</a>
                     </div>
                 </div>
                 <ResumeUpload />
