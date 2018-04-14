@@ -1,10 +1,6 @@
-//const fileUpload = require('express-fileupload');
-//const cors = require('cors');
 const db = require('../model');
 const mongoose = require("../controllers/mongoose");
 module.exports = app => {
-    //app.use(cors());
-    //app.use(fileUpload());
     app.post('/uploadResume', (req, res) => {
         let resumeData = req.body;
         let query = { "email": resumeData.userEmail };
@@ -22,8 +18,6 @@ module.exports = app => {
                 if (err) console.log(err);
                 // If that profession already exist under the user's array...then tell the user to delete it first
                 if(currentProfessions){
-
-                    console.log("LIST_CURRENT_PROFESSION: ", currentProfessions);
                     res.json({"RCB_RESUME_EXISTS_INFO": "That profession already exist. Please delete the current resume first, then upload a new one."})
                 }else{
                     console.log("That profession does not exisit, you can insert it now...");

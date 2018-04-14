@@ -10,13 +10,11 @@ class UserLogin extends React.Component {
             currentUserId: '',
             userProfilePicture: "",
             userProfession: ''
-        };
-    
+        };   
 
     handleInputChange = event => {
         // Pull the name and value properties off of the event.target (the element which triggered the event)
         const { name, value } = event.target;
-
         // Set the state for the appropriate input field
         this.setState({
             [name]: value
@@ -52,20 +50,15 @@ class UserLogin extends React.Component {
                     firstName: body.firstName,
                     lastName: body.lastName,
                     userProfilePicture: body.UserProfilePicture
-                    // userProfession: body.profession
                 }, () => {
                     if(this.state.currentUserId){
                         window.location.href = "/portfolio"
                     }
-                    //document.getElementById('close').click();
-                    //document.getElementById("profilePicture").setAttribute("src", body.UserProfilePicture);
                     // Redirect user to the portfolio page
                     console.log("STATE UPDATED")
 
                 });
-
             });//end of response
-
     }
     // Render Components
     render() {
@@ -100,8 +93,4 @@ class UserLogin extends React.Component {
         );
     };
 };
-
-
-
-// Export for others to use:
 export default UserLogin;
