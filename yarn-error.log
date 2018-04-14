@@ -18,14 +18,13 @@ npm manifest:
     "name": "rcb-network-final",
     "version": "1.0.0",
     "description": "",
-    "main": "index.js",
+    "main": "server.js",
     "scripts": {
       "start": "node server.js",
       "client": "cd client && npm run start",
       "build": "cd client && npm run build",
-      "server": "nodemon server.js",
-      "nytreact": "npm start --prefix nytreact",
-      "dev": "concurrently \"npm run server\" \"npm run nytreact\""
+      "server": "nodemon server.js",    
+      "dev": "concurrently \"npm run server\" \"npm run client\""
     },
     "repository": {
       "type": "git",
