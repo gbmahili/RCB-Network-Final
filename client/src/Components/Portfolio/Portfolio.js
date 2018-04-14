@@ -6,8 +6,8 @@ import request from 'superagent';
 // Get child components
 import UserPicture from "./UserPicture";
 import UserAbout from "./AboutUser";
-import InformationSection from "./InformationSection";
-import GBMHead from "./GBMHead";
+import InformationSection from "./../InformationSection";
+import GBMHead from "./../GBMHead";
 
 // Instantiate cloudinary variables
 const CLOUDINARY_UPLOAD_PRESET = 'rcbnetworkfinal';
