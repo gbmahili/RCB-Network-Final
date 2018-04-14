@@ -2,6 +2,7 @@
 import React from "react";
 import request from 'superagent';
 
+
 // Get child components
 import UserPicture from "./UserPicture";
 import UserAbout from "./AboutUser";
@@ -23,6 +24,7 @@ class Portfolio extends React.Component {
                 firstName: userData.firstName,
                 lastName: userData.lastName,
                 currentUserId: userData._id,
+                email: userData.email,
                 uploadedFile: null,
                 uploadedFileCloudinaryUrl: userData.UserProfilePicture
             };
@@ -31,6 +33,7 @@ class Portfolio extends React.Component {
                 firstName: "",
                 lastName: "",
                 currentUserId: "",
+                email: "",
                 uploadedFile: null,
                 uploadedFileCloudinaryUrl: "",
             };
@@ -123,6 +126,7 @@ class Portfolio extends React.Component {
                         <UserAbout
                             firstName={this.state.firstName}
                             lastName={this.state.lastName}
+                            email={this.state.email}
                         />
                     </div>
                 </div>

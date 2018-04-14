@@ -1,9 +1,7 @@
 import React from "react";
 
 class InformationSection extends React.Component {
-    // constructor(props) {
-    //     super(props);
-    // }
+    
     render() {
         return(
             <div className="row">

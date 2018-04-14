@@ -38,6 +38,7 @@ app.use(express.static(path.resolve(__dirname, "client/build")));
 app.use(routes);
 // For uploading pictures
 require("./routes/uploadPicture")(app);
+require("./routes/uploadResume")(app);
 require("./routes/Server.UserLogin")(app);
 require("./routes/Server.UserSignup")(app);
 app.get("*", (req, res) => {
