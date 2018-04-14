@@ -51,8 +51,8 @@ var UserSchema = new Schema({
       zipcode: {
           type: String
       },
-    UserProfilePicture: {
-          type: String
+    professions: {
+          type: Array
       }
 
 });

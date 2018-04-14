@@ -2,6 +2,7 @@
 import React from "react";
 import request from 'superagent';
 
+
 // Get child components
 import UserPicture from "./UserPicture";
 import UserAbout from "./AboutUser";
@@ -23,6 +24,7 @@ class Portfolio extends React.Component {
                 firstName: userData.firstName,
                 lastName: userData.lastName,
                 currentUserId: userData._id,
+                email: userData.email,
                 uploadedFile: null,
                 uploadedFileCloudinaryUrl: userData.UserProfilePicture
             };
@@ -31,6 +33,7 @@ class Portfolio extends React.Component {
                 firstName: "",
                 lastName: "",
                 currentUserId: "",
+                email: "",
                 uploadedFile: null,
                 uploadedFileCloudinaryUrl: "",
             };
@@ -64,7 +67,8 @@ class Portfolio extends React.Component {
                 // Create the file information to help with updating the user's photo...get the user's id first:                
                 // Current user:
                 const fileName = {
-                    fileName: response.body.secure_url
+                    fileName: response.body.secure_url,
+                    userEmail : document.getElementById("userEmail").getAttribute("email")
                 }
                 // 2. Send file name to the dababase 
                 fetch("/upload",
@@ -78,7 +82,6 @@ class Portfolio extends React.Component {
                     })
                     .then(res => res.json())
                     .then(body => {
-                        console.log(body)                        
                         // Update the state with the data from the database
                         this.setState({
                             currentUserId: body._id,
@@ -86,10 +89,8 @@ class Portfolio extends React.Component {
                             lastName: body.lastName,
                             uploadedFileCloudinaryUrl: body.UserProfilePicture
                         }, ()=> {
-                            console.log(this.state.currentUserId)
                             document.getElementById('close').click();
-                            document.getElementById("profilePicture").setAttribute("src", body.UserProfilePicture);
-                            console.log("MONGODB UPDATED WITH: ", this.state.uploadedFileCloudinaryUrl, body.UserProfilePicture)                            
+                            document.getElementById("profilePicture").setAttribute("src", body.UserProfilePicture);                    
                         });
                         
                     });//end of response
@@ -123,6 +124,7 @@ class Portfolio extends React.Component {
                         <UserAbout
                             firstName={this.state.firstName}
                             lastName={this.state.lastName}
+                            email={this.state.email}
                         />
                     </div>
                 </div>

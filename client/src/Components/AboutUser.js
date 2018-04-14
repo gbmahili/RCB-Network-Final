@@ -1,26 +1,22 @@
 import React from "react";
-
-class UserAbout extends React.Component {
-    render() {
+import ResumeUpload from "./ResumeUpload";
+class UserAbout extends React.Component {    
+     render() {  
         return (
             <div >
-                <div style={{ minHeight: 400 }} className="card blue-grey lighten-1">
+                <div style={{ minHeight: 375 }} className="card blue-grey lighten-1">
                     <div className="card-content white-text">
-                        <span className="card-title">{this.props.firstName}</span>
-                        <p>
-                            COMING SOON! <br />
-                            You can add your profession and resume below.
-                        </p>
+                        <span id="userEmail" email={this.props.email} className="card-title">{this.props.firstName}</span>
+                        <p>You can add your profession and resume below.</p>
                     </div>
                     <div className="card-action">
-                        <a href="#!">More</a>
-                        <a href="#!">This is a link</a>
+                        <a className="waves-effect waves-light modal-trigger" href="#modal1">Add Resume</a>
+                        <a className="waves-effect waves-light modal-trigger" href="#modal1">Current Resumes</a>
                     </div>
                 </div>
+                <ResumeUpload />
             </div>
         );
     };
 };
-
-// Export for others to use:
 export default UserAbout;
