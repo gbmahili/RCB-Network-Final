@@ -6,4 +6,7 @@ export default {
       // this is being sent to be called when the client side server runs it shall display "hello i mv veeena"
       return axios.post('/users', userData);
     }
+    // prof: function(profData){
+    //   return axios.post('/users', profData)
+    // }
   };  

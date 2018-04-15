@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
-import API from '../utils/routes';
+import React from 'react';
+// import API from '../utils/routes';
 
-class Test extends Component {
+class Test extends React.Component {
     state ={
         firstName:  'Veena',
-        lastName: 'Uppalapati'
+        lastName: 'Uppalapati',
     }
 
 
@@ -12,7 +12,8 @@ class Test extends Component {
     // because we are not able to properly route the appropriate files using React router
     render() {
         return (
-            <div>
+            <div className="card">
+                <hr/>
                 <h1>Hello, I 'm Veena!</h1>
                 <p>I'm Testing</p>
                 

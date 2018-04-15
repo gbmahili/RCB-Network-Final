@@ -2,9 +2,13 @@
   "name": "rcb-network-final",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "client": "cd client && npm run start",
+    "build": "cd client && npm run build",
+    "server": "nodemon server.js",    
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
@@ -25,6 +29,8 @@
     "morgan": "^1.9.0",
     "path": "^0.12.7",
     "cors": "^2.8.4",
-    "express-fileupload": "^0.4.0"
+    "express-fileupload": "^0.4.0",
+    "concurrently": "^3.5.1",
+    "react-scripts": "1.1.1"
   }
 }

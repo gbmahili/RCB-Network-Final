@@ -1,5 +1,6 @@
 // Require mongoose
 const mongoose = require("mongoose");
+
 // Instanciate our schema
 var Schema = mongoose.Schema;
 // Create a new article from our schema
@@ -24,11 +25,10 @@ var UserSchema = new Schema({
         required: "Password is Required"
       }, 
       gender: {
-          type: Boolean
+          type: String
       },
       birthday:{
-          type: Date,
-          default: Date.now
+          type: String
       },
       country:{
           type: String
@@ -50,12 +50,16 @@ var UserSchema = new Schema({
       },
       zipcode: {
           type: String
+      },
+    professions: {
+          type: Array
       }
 
 });
 
-// Export our new NewsArticle schema to be used
-const Users = mongoose.model("Users", UserSchema);
+
+// This creates our model from the above schema, using mongoose's model method
+var Users = mongoose.model("Users", UserSchema);
 
 // Export the User model
 module.exports = Users;
