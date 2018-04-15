@@ -179,7 +179,7 @@ class Signup extends React.Component {
               </div>
               <div className="input-field col m6 s12">
                 <i class="material-icons prefix">local_phone</i>
-                <input id="telephone" className="grey-text darken-3" type="text" name="telephone" onChange={this.handleInput} value={this.state.telephone} />
+                <input id="telephone" className="grey-text darken-3" type="tel" name="telephone" onChange={this.handleInput} value={this.state.telephone} />
                 <label className="grey-text darken-3" htmlFor="telephone">Telephone ( ex. 732-999-9999)
             </label>
               </div>
@@ -188,7 +188,7 @@ class Signup extends React.Component {
             <div className="row">
               <div className="input-field col m6 s12">
                 <i class="material-icons prefix">home</i>
-                <input id="house_number" className="grey-text darken-3" type="text" name="houseNumber" onChange={this.handleInput} value={this.state.houseNumber} />
+                <input id="house_number" className="grey-text darken-3" type="number" name="houseNumber" onChange={this.handleInput} value={this.state.houseNumber} />
                 <label className="grey-text darken-3" htmlFor="house_number">House Number</label>
               </div>
               <div className="input-field col m6 s12">
@@ -211,7 +211,7 @@ class Signup extends React.Component {
               </div>
               <div className="input-field col m4 s12">
                 <i class="material-icons prefix">local_post_office</i>
-                <input id="zipcode" className="grey-text darken-3" type="text" name="zipCode" onChange={this.handleInput} value={this.state.zipCode} />
+                <input id="zipcode" className="grey-text darken-3" type="number" name="zipCode" onChange={this.handleInput} value={this.state.zipCode} />
                 <label className="grey-text darken-3" htmlFor="zipcode">Zip Code</label>
               </div>
             </div>
