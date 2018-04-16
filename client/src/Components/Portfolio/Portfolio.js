@@ -35,7 +35,7 @@ class Portfolio extends React.Component {
                 currentUserId: "",
                 email: "",
                 uploadedFile: null,
-                uploadedFileCloudinaryUrl: "",
+                uploadedFileCloudinaryUrl: "assets/images/networking_with_friends.jpeg",
             };
         }
 
@@ -64,10 +64,19 @@ class Portfolio extends React.Component {
             if (err) { console.error(err); }
             // Check if the url from cloudinary is not empty
             if (response.body.secure_url !== '') {
-                // Create the file information to help with updating the user's photo...get the user's id first:                
+                // Modify the file and add cropping details before sending to the database:
+                const url_spliter = "upload/";
+                const cloudinary_response = response.body.secure_url;
+                const res = cloudinary_response.split(url_spliter);
+                const urs_first_section = res[0];
+                const url_last_section = res[1];
+                const cropping_parameters = "w_300,h_300,c_thumb,g_face,e_saturation:80/";
+                // File to send to the database
+                const imageUrl = urs_first_section + url_spliter + cropping_parameters + url_last_section;
+                // Create the file information to help with updating the user's photo...get the user's id first:
                 // Current user:
                 const fileName = {
-                    fileName: response.body.secure_url,
+                    fileName: imageUrl,
                     userEmail : document.getElementById("userEmail").getAttribute("email")
                 }
                 // 2. Send file name to the dababase 
@@ -80,20 +89,19 @@ class Portfolio extends React.Component {
                         method: "POST",
                         body: JSON.stringify(fileName)
                     })
-                    .then(res => res.json())
-                    .then(body => {
-                        // Update the state with the data from the database
-                        this.setState({
-                            currentUserId: body._id,
-                            firstName: body.firstName,
-                            lastName: body.lastName,
-                            uploadedFileCloudinaryUrl: body.UserProfilePicture
-                        }, ()=> {
-                            document.getElementById('close').click();
-                            document.getElementById("profilePicture").setAttribute("src", body.UserProfilePicture);                    
-                        });
-                        
-                    });//end of response
+                .then(res => res.json())
+                .then(body => {
+                    // Update the state with the data from the database
+                    this.setState({
+                        currentUserId: body._id,
+                        firstName: body.firstName,
+                        lastName: body.lastName,
+                        uploadedFileCloudinaryUrl: body.UserProfilePicture
+                    }, ()=> {
+                        document.getElementById('close').click();
+                        document.getElementById("profilePicture").setAttribute("src", body.UserProfilePicture);
+                    });
+                });//end of response
             }
         });
     }

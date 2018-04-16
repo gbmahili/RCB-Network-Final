@@ -7,7 +7,7 @@ class UserPicture extends React.Component{
 	render() {
 		return(
 			<div>
-				<div style={{minHeight: 375}} className="card">
+				<div style={{minHeight: 495}} className="card">
 					<div className="card-image waves-effect waves-block waves-light">
 						{
 							this.props.uploadedFileCloudinaryUrl === '' ? 

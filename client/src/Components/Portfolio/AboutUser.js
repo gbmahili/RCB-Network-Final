@@ -4,7 +4,7 @@ class UserAbout extends React.Component {
      render() {  
         return (
             <div >
-                <div style={{ minHeight: 375 }} className="card blue-grey lighten-1">
+                <div style={{ minHeight: 495 }} className="card blue-grey lighten-1">
                     <div className="card-content white-text">
                         <span id="userEmail" email={this.props.email} className="card-title">{this.props.firstName}</span>
                         <p>You can add your profession and resume below.</p>

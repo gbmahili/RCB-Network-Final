@@ -121,7 +121,7 @@ class Search extends Component {
                 this.state.userInfo.map((element, i) => (
             
                     element.professions.map((professionElement, i2)=> (
-                        professionElement.professionName === this.state.professionName ? 
+                        professionElement.professionName === this.state.professionName ?                         
                         <Display
                             key={i2}
                             UserProfilePicture= {element.UserProfilePicture}
