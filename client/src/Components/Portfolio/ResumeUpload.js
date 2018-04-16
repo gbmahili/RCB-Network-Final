@@ -79,59 +79,59 @@ class ResumeUpload extends React.Component {
                         
                             <div className="col s12 m4">
                                 <label>
-                                    <input name="professionName" value="Developer" type="radio" onChange={this.getProfessionName}/>
-                                    <span>Developer</span>
+                                    <input name="professionName" value="Full Stack Web Developer" type="radio" onChange={this.getProfessionName}/>
+                                    <span>Full Stack Web Developer</span>
                                 </label>
                             </div>
                             <div className="col s12 m4">
                                 <label>
-                                    <input name="professionName" value="Graphic Artist" type="radio" onChange={this.getProfessionName}/>
-                                    <span>Graphic Artist</span>
+                                    <input name="professionName" value="Business Analyst" type="radio" onChange={this.getProfessionName}/>
+                                    <span>Business Analyst</span>
                                 </label>
                             </div>
                             <div className="col s12 m4">
                                 <label>
-                                    <input name="professionName" value="Photographer" type="radio" onChange={this.getProfessionName}/>
-                                    <span>Photographer</span>
+                                    <input name="professionName" value="Frontend Web Developer" type="radio" onChange={this.getProfessionName}/>
+                                    <span>Frontend Web Developer</span>
                                 </label>
                             </div>                 
 
                        
                             <div className="col s12 m4">
                                 <label>
-                                    <input name="professionName" value="Writer" type="radio" onChange={this.getProfessionName}/>
-                                    <span>Writer</span>
+                                    <input name="professionName" value="Backend Web Developer" type="radio" onChange={this.getProfessionName}/>
+                                    <span>Backend Web Developer</span>
                                 </label>
                             </div>
                             <div className="col s12 m4">
                                 <label>
-                                    <input name="professionName" value="Scrum Writer" type="radio" onChange={this.getProfessionName}/>
-                                    <span>Scrum Writer</span>
+                                    <input name="professionName" value="UX/UI Developer" type="radio" onChange={this.getProfessionName}/>
+                                    <span>UX/UI Developer</span>
                                 </label>
                             </div>
                             <div className="col s12 m4">
                                 <label>
-                                    <input name="professionName" value="Chef" type="radio" onChange={this.getProfessionName}/>
-                                    <span>Chef</span>
+                                    <input name="professionName" value="HTML/CSS Developer" type="radio" onChange={this.getProfessionName}/>
+                                    <span>HTML/CSS Developer</span>
                                 </label>
                             </div>
                         
                             <div className="col s12 m4">
                                 <label>
-                                    <input name="professionName" value="Teacher" type="radio" onChange={this.getProfessionName}/>
-                                    <span>Teacher</span>
+                                    <input name="professionName" value="Javascript Developer" type="radio" onChange={this.getProfessionName}/>
+                                    <span>Javascript Developer</span>
                                 </label>
                             </div>
                             <div className="col s12 m4">
                                 <label>
-                                    <input name="professionName" value="Sales" type="radio" onChange={this.getProfessionName}/>
-                                    <span>Sales</span>
+                                    <input name="professionName" value="React Developer" type="radio" onChange={this.getProfessionName}/>
+                                    <span>React Developer</span>
                                 </label>
                             </div>
                             <div className="col s12 m4">
                                 <label>
-                                    <input name="professionName" value="Other" type="radio" onChange={this.getProfessionName}/>
-                                    <span>Other</span>
+                                    <input name="professionName" value="Database Management" type="radio" onChange={this.getProfessionName}/>
+                                    <span> Database Management</span>
                                 </label>
                             </div>                        
 

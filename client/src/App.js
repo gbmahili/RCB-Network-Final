@@ -8,6 +8,7 @@ import Signup from './Components/SignUp/Client.UserSignup';
 // Nancy compontent import
 import Header from './Components/Header';
 import SubmitButton from './Components/SubmitButton';
+import Search from './Components/search';
 // *End - Nancy compontent import
 
 
@@ -21,6 +22,7 @@ const App = () =>
       {/* Venna's components */}
       <Route exact path ='/' component={Form} />
       <Route exact path ='/' component={Test} />
+      <Route exact path ='/search' component={Search} />
 
       {/* Baraka's components */}
       <Route exact path='/portfolio' component={Portfolio} />
