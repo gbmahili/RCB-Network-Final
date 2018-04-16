@@ -70,7 +70,7 @@ class Portfolio extends React.Component {
                 const res = cloudinary_response.split(url_spliter);
                 const urs_first_section = res[0];
                 const url_last_section = res[1];
-                const cropping_parameters = "w_300,h_300,c_thumb,g_face,e_saturation:80/";
+                const cropping_parameters = "w_250,h_250,c_thumb,g_face,e_saturation:80/";
                 // File to send to the database
                 const imageUrl = urs_first_section + url_spliter + cropping_parameters + url_last_section;
                 // Create the file information to help with updating the user's photo...get the user's id first:
