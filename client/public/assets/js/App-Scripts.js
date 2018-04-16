@@ -1,6 +1,9 @@
 $(document).ready(function () {
     // Materialize Modal
     $('.modal').modal();
+    // Select initialization
+    $('select').formSelect();
+    
     // Google Sign In
     onSignIn = (googleUser) => {
         var profile = googleUser.getBasicProfile();

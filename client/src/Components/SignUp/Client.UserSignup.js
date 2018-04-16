@@ -125,14 +125,14 @@ class Signup extends React.Component {
 
             <div className="row">
               <div className="input-field col m6 s12">
-                <i class="material-icons prefix">account_circle</i>
+                <i className="material-icons prefix">account_circle</i>
                 <input className="grey-text darken-3 rcb_required_field" id="firstName" onChange={this.handleInput} name="firstName" value={this.state.firstName} type="text" />
                 <label className="grey-text" htmlFor="firstName">First Name
                 <span className=" red-text"> *</span>
                 </label>
               </div>
               <div className="input-field col m6 s12">
-                <i class="material-icons prefix">account_circle</i>
+                <i className="material-icons prefix">account_circle</i>
                 <input className="grey-text darken-3 rcb_required_field" id="lastName" onChange={this.handleInput} name="lastName" value={this.state.lastName} type="text" />
                 <label className="grey-text" htmlFor="lastName">Last Name
                 <span className=" red-text"> *</span>
@@ -142,14 +142,14 @@ class Signup extends React.Component {
 
             <div className="row">
               <div className="input-field validate col m6 s12">
-                <i class="material-icons prefix">email</i>
+                <i className="material-icons prefix">email</i>
                 <input className="grey-text darken-3 rcb_required_field" id="email" onChange={this.handleInput} name="email" value={this.state.email} type="email" />
                 <label className="grey-text" htmlFor="email">Email
                   <span className=" red-text"> *</span>
                 </label>
               </div>
               <div className="input-field col m6 s12">
-                <i class="material-icons prefix">security</i>
+                <i className="material-icons prefix">security</i>
                 <input className="grey-text darken-3 rcb_required_field" id="password" onChange={this.handleInput} name="password" type="password" value={this.state.password} />
                 <label className="grey-text " htmlFor="password">Create Password
                 <span className=" red-text"> *</span>
@@ -159,13 +159,13 @@ class Signup extends React.Component {
 
             <div className="row">
               <div className="input-field col m6 s12">
-                <i class="material-icons prefix">portrait</i>
+                <i className="material-icons prefix">portrait</i>
                 <input id="gender" onChange={this.handleInput} name="gender" value={this.state.gender} type="text" className="materialize-textarea grey-text" />
                 <label className="grey-text darken-3" htmlFor="gender">Gender (Male or Female)
                 </label>
               </div>
               <div className="grey-text input-field col m6 s12">
-                <i class="material-icons prefix">date_range</i>
+                <i className="material-icons prefix">date_range</i>
                 <input type="date" className="datepicker darken-3" id="date_of_birth" name="dateOfBirth" onChange={this.handleInput} value={this.state.dateOfBirth} />
                 <label htmlFor="date_of_birth">Enter your Birthday</label>
               </div>
@@ -173,12 +173,12 @@ class Signup extends React.Component {
 
             <div className="row">
               <div className="input-field col m6 s12">
-                <i class="material-icons prefix">public</i>
+                <i className="material-icons prefix">public</i>
                 <input id="country" className="grey-text darken-3" type="text" name="country" onChange={this.handleInput} value={this.state.country} />
                 <label className="grey-text darken-3" htmlFor="country">Country</label>
               </div>
               <div className="input-field col m6 s12">
-                <i class="material-icons prefix">local_phone</i>
+                <i className="material-icons prefix">local_phone</i>
                 <input id="telephone" className="grey-text darken-3" type="tel" name="telephone" onChange={this.handleInput} value={this.state.telephone} />
                 <label className="grey-text darken-3" htmlFor="telephone">Telephone ( ex. 732-999-9999)
             </label>
@@ -187,12 +187,12 @@ class Signup extends React.Component {
 
             <div className="row">
               <div className="input-field col m6 s12">
-                <i class="material-icons prefix">home</i>
+                <i className="material-icons prefix">home</i>
                 <input id="house_number" className="grey-text darken-3" type="number" name="houseNumber" onChange={this.handleInput} value={this.state.houseNumber} />
                 <label className="grey-text darken-3" htmlFor="house_number">House Number</label>
               </div>
               <div className="input-field col m6 s12">
-                <i class="material-icons prefix">local_post_office</i>
+                <i className="material-icons prefix">local_post_office</i>
                 <input id="street_name" className="grey-text darken-3" type="text" name="streetName" onChange={this.handleInput} value={this.state.streetName} />
                 <label className="grey-text darken-3" htmlFor="street_name">Street Name</label>
               </div>
@@ -200,17 +200,17 @@ class Signup extends React.Component {
 
             <div className="row">
               <div className="input-field col m4 s12">
-                <i class="material-icons prefix">location_city</i>
+                <i className="material-icons prefix">location_city</i>
                 <input id="city" className="grey-text darken-3" type="text" name="city" onChange={this.handleInput} value={this.state.city} />
                 <label className="grey-text darken-3" htmlFor="city">City</label>
               </div>
               <div className="input-field col m4 s12">
-                <i class="material-icons prefix">home</i>
+                <i className="material-icons prefix">home</i>
                 <input id="stateName" className="grey-text darken-3" type="text" name="stateName" onChange={this.handleInput} value={this.state.stateName} />
                 <label className="grey-text darken-3" htmlFor="state">State Name</label>
               </div>
               <div className="input-field col m4 s12">
-                <i class="material-icons prefix">local_post_office</i>
+                <i className="material-icons prefix">local_post_office</i>
                 <input id="zipcode" className="grey-text darken-3" type="number" name="zipCode" onChange={this.handleInput} value={this.state.zipCode} />
                 <label className="grey-text darken-3" htmlFor="zipcode">Zip Code</label>
               </div>
@@ -218,7 +218,7 @@ class Signup extends React.Component {
 
             <center>
               <div className="input-field col s12">
-                <button className="btn signUpButton" onClick={this.signUp} >Sign Up <i class="material-icons right">done</i></button>
+                <button className="btn signUpButton" onClick={this.signUp} >Sign Up <i className="material-icons right">done</i></button>
               </div>
             </center>
 
