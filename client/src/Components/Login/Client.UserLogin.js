@@ -20,6 +20,7 @@ class UserLogin extends React.Component {
         this.setState({
             [name]: value
         });
+        
     };
 
     // Upload Image to Cloudability and the url to the user's account:
@@ -63,7 +64,7 @@ class UserLogin extends React.Component {
                 }else{
                     const messageDiv = `
                     <div class="row">
-                        <div class="col s12">
+                        <div class="col s12" id="memberbox">
                         <div class="card red white-teext darken-1">
                             <div class="card-content white-text">
                             <span class="card-title">Hhmm...&#9785;</span>
@@ -122,7 +123,7 @@ class UserLogin extends React.Component {
                                         <i className="material-icons left">account_box</i> Sign in 
                                     </button>
                             </div>
-                            <div className="col s12 m6 input-field">
+                            <div className="col s12 m6 input-field" >
                                 {/* Sign in With Google */}
                                 <LoginWithGoogle />
                             </div>

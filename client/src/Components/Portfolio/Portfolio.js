@@ -146,8 +146,10 @@ class Portfolio extends React.Component {
         return (
             <div>
                 {/* <GBMHead />   */}
-                <Search />             
+                <Search />   
+                <div id='test'>
                 {userPortfolio}
+                </div>
             </div>
         );
     };

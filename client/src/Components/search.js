@@ -37,44 +37,16 @@ class Search extends Component {
             this.setState({ userInfo }, () => {
                 console.log(userInfo.length)
                 if(userInfo.length === 0){
+                    // document.getElementById('test').setAttribute('class', 'hide');
                     document.getElementById('default').setAttribute('class', 'show');
-                    setTimeout(function(){
-                    document.getElementById('default').setAttribute('class', 'hide');
-                    }, 10000)
+                    // setTimeout(function(){
+                    // document.getElementById('default').setAttribute('class', 'hide');
+                    // }, 10000)
                 }
             });
             // Update the display component with the looped data:
         });
        
-    }
-
-    handleLogic = () =>{
-        if (this.state.userInfo.length === 0){
-            <h1>No match</h1>
-        }else {
-            this.state.userInfo.map((element, i) => (
-                            
-                element.professions.map((professionElement, i2)=> (
-                
-                    <Display
-                        key={i2}
-                        UserProfilePicture= {element.UserProfilePicture}
-                        professionName={this.state.professionName}
-                        firstName={element.firstName}
-                        lastName={element.lastName}
-                        city={element.city}
-                        stateName={element.stateName}
-                        email={element.email}
-                        resumeLink={professionElement.resumeLink}
-                    />    
-                    
-                ))
-                                    
-            ))
-
-        }
-                  
-                  
     }
 
     
@@ -152,13 +124,14 @@ class Search extends Component {
             
             </div>
             </div>
-            
- 
 
            <div className='row blue-grey lighten-2'> 
+           
            <h1
            id= 'default'
-           className='hide'>no match</h1>
+           className='hide'>
+            No match
+           </h1>
 
                 {
                     this.state.userInfo.map((element, i) => (        
@@ -176,30 +149,7 @@ class Search extends Component {
                             />        
                         ))                       
                     ))
-                    // (this.state.professionName === 'profession')
-                    // ?
-                    // ''
-                    // :
-                    
-                    // (this.state.userInfo.length === 0)
-                    // ?
-                    // <h1>No match</h1>
-                    // :
-                    // this.state.userInfo.map((element, i) => (        
-                    //     element.professions.map((professionElement, i2)=> ( 
-                    //         <Display
-                    //             key={i2}
-                    //             UserProfilePicture= {element.UserProfilePicture}
-                    //             professionName={this.state.professionName}
-                    //             firstName={element.firstName}
-                    //             lastName={element.lastName}
-                    //             city={element.city}
-                    //             stateName={element.stateName}
-                    //             email={element.email}
-                    //             resumeLink={professionElement.resumeLink}
-                    //         />        
-                    //     ))                       
-                    // ))
+             
                 }
            
             </div> 
