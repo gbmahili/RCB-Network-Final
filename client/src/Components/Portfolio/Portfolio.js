@@ -8,6 +8,7 @@ import UserPicture from "./UserPicture";
 import UserAbout from "./AboutUser";
 import InformationSection from "./../InformationSection";
 import GBMHead from "./../GBMHead";
+import Search from './../search';
 
 // Instantiate cloudinary variables
 const CLOUDINARY_UPLOAD_PRESET = 'rcbnetworkfinal';
@@ -152,7 +153,8 @@ class Portfolio extends React.Component {
         // Render one document
         return (
             <div>
-                <GBMHead />                
+                {/* <GBMHead />   */}
+                <Search />             
                 {userPortfolio}
             </div>
         );
