@@ -98,6 +98,10 @@ class Portfolio extends React.Component {
                         lastName: body.lastName,
                         uploadedFileCloudinaryUrl: body.UserProfilePicture
                     }, ()=> {
+                        // Remove storage data
+                        localStorage.removeItem("RCB_USER");
+                        // Set new storage data
+                        localStorage.setItem("RCB_USER", JSON.stringify(body));
                         document.getElementById('close').click();
                         document.getElementById("profilePicture").setAttribute("src", body.UserProfilePicture);
                     });
