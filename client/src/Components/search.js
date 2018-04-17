@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import API from '../utils/routes'; 
 import Display from './display';
 import GBMHead from './GBMHead';
-import { isNull } from 'util';
+// import { isNull } from 'util';
 
 class Search extends Component {
   constructor(props){
@@ -47,36 +47,6 @@ class Search extends Component {
         });
        
     }
-
-    handleLogic = () =>{
-        if (this.state.userInfo.length === 0){
-            <h1>No match</h1>
-        }else {
-            this.state.userInfo.map((element, i) => (
-                            
-                element.professions.map((professionElement, i2)=> (
-                
-                    <Display
-                        key={i2}
-                        UserProfilePicture= {element.UserProfilePicture}
-                        professionName={this.state.professionName}
-                        firstName={element.firstName}
-                        lastName={element.lastName}
-                        city={element.city}
-                        stateName={element.stateName}
-                        email={element.email}
-                        resumeLink={professionElement.resumeLink}
-                    />    
-                    
-                ))
-                                    
-            ))
-
-        }
-                  
-                  
-    }
-
     
     render() {
         return(
@@ -162,9 +132,9 @@ class Search extends Component {
            </h1>
 
             {
-                this.state.userInfo.map((element, i) => (            
+                this.state.userInfo.map((element, i) => (
                     element.professions.map((professionElement, i2)=> (
-                        professionElement.professionName === this.state.professionName ?                         
+                        professionElement.professionName === this.state.professionName ?
                         <Display
                             key={i2}
                             UserProfilePicture= {element.UserProfilePicture}
@@ -176,15 +146,13 @@ class Search extends Component {
                             email={element.email}
                             resumeLink={professionElement.resumeLink}
                         />: null
-                    ))                   
-                }
-           
-            </div> 
-                      
+                    ))
+                ))
+            }   
             </div>
-            
+        </div>
         )
-    }
+}
 }
 
 export default Search;

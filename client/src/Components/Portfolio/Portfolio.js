@@ -7,7 +7,6 @@ import request from 'superagent';
 import UserPicture from "./UserPicture";
 import UserAbout from "./AboutUser";
 import InformationSection from "./../InformationSection";
-import GBMHead from "./../GBMHead";
 import Search from './../search';
 
 // Instantiate cloudinary variables
