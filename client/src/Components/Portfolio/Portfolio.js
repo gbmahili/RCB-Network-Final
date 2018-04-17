@@ -7,7 +7,6 @@ import request from 'superagent';
 import UserPicture from "./UserPicture";
 import UserAbout from "./AboutUser";
 import InformationSection from "./../InformationSection";
-import GBMHead from "./../GBMHead";
 import Search from './../search';
 
 // Instantiate cloudinary variables
@@ -145,7 +144,6 @@ class Portfolio extends React.Component {
         // Render one document
         return (
             <div>
-                {/* <GBMHead />   */}
                 <Search />   
                 <div id='test'>
                 {userPortfolio}
