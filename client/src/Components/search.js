@@ -148,7 +148,13 @@ class Search extends Component {
                             ))                       
                         ))
                     }
-                    
+                </div>
+            </div>
+        </div>
+        )
+    }
 }
+                    
+
 
 export default Search;
