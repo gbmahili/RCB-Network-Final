@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import API from '../utils/routes'; 
 import Display from './display';
 import GBMHead from './GBMHead';
-import { isNull } from 'util';
+// import { isNull } from 'util';
 
 class Search extends Component {
   constructor(props){
@@ -48,7 +48,6 @@ class Search extends Component {
         });
        
     }
-
     
     render() {
         return(
@@ -125,34 +124,28 @@ class Search extends Component {
                     </div>
                     
 
-                <div className='row'>  
-                    <h1
-                    id= 'default'
-                    className='hide'>
-                        No match
-                    </h1>
-                    {
-                        this.state.userInfo.map((element, i) => (        
-                            element.professions.map((professionElement, i2)=> ( 
-                                <Display
-                                    key={i2}
-                                    UserProfilePicture= {element.UserProfilePicture}
-                                    professionName={this.state.professionName}
-                                    firstName={element.firstName}
-                                    lastName={element.lastName}
-                                    city={element.city}
-                                    stateName={element.stateName}
-                                    email={element.email}
-                                    resumeLink={professionElement.resumeLink}
-                                />        
-                            ))                       
-                        ))
-                    }
-                </div>
+            {
+                this.state.userInfo.map((element, i) => (
+                    element.professions.map((professionElement, i2)=> (
+                        professionElement.professionName === this.state.professionName ?
+                        <Display
+                            key={i2}
+                            UserProfilePicture= {element.UserProfilePicture}
+                            professionName={this.state.professionName}
+                            firstName={element.firstName}
+                            lastName={element.lastName}
+                            city={element.city}
+                            stateName={element.stateName}
+                            email={element.email}
+                            resumeLink={professionElement.resumeLink}
+                        />: null
+                    ))
+                ))
+            }   
             </div>
         </div>
         )
-    }
+}
 }
                     
 
