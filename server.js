@@ -41,6 +41,7 @@ require("./routes/uploadPicture")(app);
 require("./routes/uploadResume")(app);
 require("./routes/Server.UserLogin")(app);
 require("./routes/Server.UserSignup")(app);
+require("./routes/Server.UpdateProfile")(app);
 require('./routes/getprofessions')(app);
 app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "client/build", "index.html"));

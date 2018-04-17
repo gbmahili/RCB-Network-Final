@@ -17,7 +17,7 @@ class UserPicture extends React.Component{
 					</div>
 					<div className="card-content">
 						<span className="card-title activator grey-text text-darken-4">{this.props.firstName}<i className="material-icons right">add_a_photo</i></span>
-						
+						<button className="btn" style={{ width: "100%" }}>UPDATE YOUR PROFILE</button>
 					</div>
 
 					<div className="card-reveal">
