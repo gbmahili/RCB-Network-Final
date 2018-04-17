@@ -228,7 +228,8 @@ class UpdateProfile extends React.Component {
 
                         <center>
                             <div className="input-field col s12">
-                                <button className="btn updateProfileButton" onClick={this.updateProfile} >UPDATE PROFILE <i className="material-icons right">done</i></button>
+                                <button className="btn updateProfileButton" onClick={this.updateProfile} >UPDATE PROFILE <i className="material-icons right">done</i></button> 
+                                <a href="/portfolio" className="btn red" >CANCEL <i className="material-icons right">cross</i></a>
                             </div>
                         </center>
 
