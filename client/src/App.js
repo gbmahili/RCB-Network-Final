@@ -9,6 +9,7 @@ import Signup from './Components/SignUp/Client.UserSignup';
 import Header from './Components/Header';
 import SubmitButton from './Components/SubmitButton';
 import Search from './Components/search';
+import UpdateProfile from './Components/Portfolio/UpdateProfile';
 // *End - Nancy compontent import
 
 
@@ -27,6 +28,8 @@ const App = () =>
       {/* Baraka's components */}
       <Route exact path='/portfolio' component={Portfolio} />
       <Route exact path='/login' component={UserLogin} />
+      <Route exact path='/update-profile' component={UpdateProfile} />
+       
 
       {/* Miles's components */}
       <Route exact path='/signup' component= {Signup}/>
