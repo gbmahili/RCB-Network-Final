@@ -77,4 +77,14 @@ $(document).ready(function () {
             $(".signUpButton").prop("disabled", true);
         }
     });
+
+    $('#prof').change(function(){
+        console.log($('#prof').val());
+        if($('#prof').val() === 'profession'){
+            $('#searchIcon').attr('disabled', true)
+        }else {
+            $('#searchIcon').attr('disabled', false)
+        }
+       
+    })
 });

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import API from '../utils/routes'; 
 import Display from './display';
 import GBMHead from './GBMHead';
+import { isNull } from 'util';
 
 class Search extends Component {
   constructor(props){
@@ -33,12 +34,48 @@ class Search extends Component {
             const userInfo = response.data;
 
             // Update the state with the new data
-            this.setState({ userInfo });
+            this.setState({ userInfo }, () => {
+                console.log(userInfo.length)
+                if(userInfo.length === 0){
+                    document.getElementById('default').setAttribute('class', 'show');
+                    setTimeout(function(){
+                    document.getElementById('default').setAttribute('class', 'hide');
+                    }, 10000)
+                }
+            });
             // Update the display component with the looped data:
         });
        
     }
 
+    handleLogic = () =>{
+        if (this.state.userInfo.length === 0){
+            <h1>No match</h1>
+        }else {
+            this.state.userInfo.map((element, i) => (
+                            
+                element.professions.map((professionElement, i2)=> (
+                
+                    <Display
+                        key={i2}
+                        UserProfilePicture= {element.UserProfilePicture}
+                        professionName={this.state.professionName}
+                        firstName={element.firstName}
+                        lastName={element.lastName}
+                        city={element.city}
+                        stateName={element.stateName}
+                        email={element.email}
+                        resumeLink={professionElement.resumeLink}
+                    />    
+                    
+                ))
+                                    
+            ))
+
+        }
+                  
+                  
+    }
 
     
     render() {
@@ -50,6 +87,7 @@ class Search extends Component {
                 <div className="col s10 m10" >
                 <label htmlFor='selectOne'></label>
                 <select
+                    id='prof'
                     value = {this.state.professionName}
                     onChange = { this.onChange.bind(this) }
                     
@@ -103,7 +141,8 @@ class Search extends Component {
                 className="btn waves-effect waves-light waves-green" 
                 href="#!" 
                 id="searchIcon"
-                onClick = {this.onSubmit.bind(this)}> 
+                onClick = {this.onSubmit.bind(this)}
+                disabled> 
                     <i 
                     className="material-icons">
                     search
@@ -113,31 +152,57 @@ class Search extends Component {
             
             </div>
             </div>
-
-
-            <div className='row blue-grey lighten-2'>
-
-            {
-                this.state.userInfo.map((element, i) => (
             
-                    element.professions.map((professionElement, i2)=> (
-                        professionElement.professionName === this.state.professionName ? 
-                        <Display
-                            key={i2}
-                            UserProfilePicture= {element.UserProfilePicture}
-                            professionName={this.state.professionName}
-                            firstName={element.firstName}
-                            lastName={element.lastName}
-                            city={element.city}
-                            stateName={element.stateName}
-                            email={element.email}
-                            resumeLink={professionElement.resumeLink}
-                        />: null
+ 
+
+           <div className='row blue-grey lighten-2'> 
+           <h1
+           id= 'default'
+           className='hide'>no match</h1>
+
+                {
+                    this.state.userInfo.map((element, i) => (        
+                        element.professions.map((professionElement, i2)=> ( 
+                            <Display
+                                key={i2}
+                                UserProfilePicture= {element.UserProfilePicture}
+                                professionName={this.state.professionName}
+                                firstName={element.firstName}
+                                lastName={element.lastName}
+                                city={element.city}
+                                stateName={element.stateName}
+                                email={element.email}
+                                resumeLink={professionElement.resumeLink}
+                            />        
+                        ))                       
                     ))
-                ))
-            }
+                    // (this.state.professionName === 'profession')
+                    // ?
+                    // ''
+                    // :
+                    
+                    // (this.state.userInfo.length === 0)
+                    // ?
+                    // <h1>No match</h1>
+                    // :
+                    // this.state.userInfo.map((element, i) => (        
+                    //     element.professions.map((professionElement, i2)=> ( 
+                    //         <Display
+                    //             key={i2}
+                    //             UserProfilePicture= {element.UserProfilePicture}
+                    //             professionName={this.state.professionName}
+                    //             firstName={element.firstName}
+                    //             lastName={element.lastName}
+                    //             city={element.city}
+                    //             stateName={element.stateName}
+                    //             email={element.email}
+                    //             resumeLink={professionElement.resumeLink}
+                    //         />        
+                    //     ))                       
+                    // ))
+                }
            
-            </div>
+            </div> 
             </div>
             
         )
