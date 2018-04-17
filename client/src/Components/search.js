@@ -125,7 +125,7 @@ class Search extends Component {
                     </div>
                     
 
-                <div className='row blue-grey lighten-2'>  
+                <div className='row'>  
                     <h1
                     id= 'default'
                     className='hide'>
