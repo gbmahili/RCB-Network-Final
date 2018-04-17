@@ -157,52 +157,30 @@ class Search extends Component {
 
            <div className='row blue-grey lighten-2'> 
            <h1
-           id= 'default'
-           className='hide'>no match</h1>
+             id= 'default'
+             className='hide'>no match
+           </h1>
 
-                {
-                    this.state.userInfo.map((element, i) => (        
-                        element.professions.map((professionElement, i2)=> ( 
-                            <Display
-                                key={i2}
-                                UserProfilePicture= {element.UserProfilePicture}
-                                professionName={this.state.professionName}
-                                firstName={element.firstName}
-                                lastName={element.lastName}
-                                city={element.city}
-                                stateName={element.stateName}
-                                email={element.email}
-                                resumeLink={professionElement.resumeLink}
-                            />        
-                        ))                       
-                    ))
-                    // (this.state.professionName === 'profession')
-                    // ?
-                    // ''
-                    // :
-                    
-                    // (this.state.userInfo.length === 0)
-                    // ?
-                    // <h1>No match</h1>
-                    // :
-                    // this.state.userInfo.map((element, i) => (        
-                    //     element.professions.map((professionElement, i2)=> ( 
-                    //         <Display
-                    //             key={i2}
-                    //             UserProfilePicture= {element.UserProfilePicture}
-                    //             professionName={this.state.professionName}
-                    //             firstName={element.firstName}
-                    //             lastName={element.lastName}
-                    //             city={element.city}
-                    //             stateName={element.stateName}
-                    //             email={element.email}
-                    //             resumeLink={professionElement.resumeLink}
-                    //         />        
-                    //     ))                       
-                    // ))
+            {
+                this.state.userInfo.map((element, i) => (            
+                    element.professions.map((professionElement, i2)=> (
+                        professionElement.professionName === this.state.professionName ?                         
+                        <Display
+                            key={i2}
+                            UserProfilePicture= {element.UserProfilePicture}
+                            professionName={this.state.professionName}
+                            firstName={element.firstName}
+                            lastName={element.lastName}
+                            city={element.city}
+                            stateName={element.stateName}
+                            email={element.email}
+                            resumeLink={professionElement.resumeLink}
+                        />: null
+                    ))                   
                 }
            
             </div> 
+                      
             </div>
             
         )

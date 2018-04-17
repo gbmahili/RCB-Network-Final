@@ -7,7 +7,7 @@ class UserPicture extends React.Component{
 	render() {
 		return(
 			<div>
-				<div style={{minHeight: 375}} className="card">
+				<div style={{minHeight: 495}} className="card">
 					<div className="card-image waves-effect waves-block waves-light">
 						{
 							this.props.uploadedFileCloudinaryUrl === '' ? 
@@ -17,7 +17,7 @@ class UserPicture extends React.Component{
 					</div>
 					<div className="card-content">
 						<span className="card-title activator grey-text text-darken-4">{this.props.firstName}<i className="material-icons right">add_a_photo</i></span>
-						
+						{/* <a href="/update-profile" className="btn blue-grey lighten-1" style={{ width: "100%" }}>UPDATE YOUR PROFILE</a> */}
 					</div>
 
 					<div className="card-reveal">
