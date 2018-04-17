@@ -1,6 +1,6 @@
 // entry -> output
 const path = require('path');
-console.log(__dirname);
+
 module.exports = {
   entry: './src/app.js',
   output: {
@@ -15,8 +15,8 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.s?css$/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        test: /.\css$/,
+        use: ['style-loader', 'css-loader']
       }
     ]
   },
