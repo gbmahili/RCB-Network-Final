@@ -115,6 +115,7 @@ class Portfolio extends React.Component {
         let isLoggedIn;        
         if (localStorage.getItem("RCB_USER")) {
             let userData = JSON.parse(localStorage.getItem("RCB_USER"));
+            console.log(userData.firstName)
             isLoggedIn = userData._id;
         }else{
             isLoggedIn = "";
