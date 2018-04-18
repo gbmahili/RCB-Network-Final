@@ -87,4 +87,8 @@ $(document).ready(function () {
         }
        
     })
+
+    $('#searchIcon').click(function(){
+       document.getElementById('test').setAttribute('class', 'hide');
+    })
 });

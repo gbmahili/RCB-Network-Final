@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 class Display extends Component {
     render(){
         return(        
-        <div className="col s12 m4 ">
+        <div className="col s12 m4 blue-grey lighten-2">
             <div className="card">
                 <div className="card-image">
                     <img alt={this.props.firstName} id="image" src={this.props.UserProfilePicture} />
