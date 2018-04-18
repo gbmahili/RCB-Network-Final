@@ -1,7 +1,7 @@
 import React from 'react';
 import InformationSection from './../InformationSection';
 import GBMHead from './../GBMHead';
-import styles from './Client.UserSignup.css';
+import './Client.UserSignup.css';
 
 
 class Signup extends React.Component {
