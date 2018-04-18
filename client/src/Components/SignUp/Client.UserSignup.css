@@ -1,0 +1,11 @@
+.background {
+    background: url("./pencil.jpeg");
+    position: absolute; 
+    height: 1200px; 
+    width: 100%;
+    left:0;
+    top: 0;
+    z-index: -1;
+
+}
+
