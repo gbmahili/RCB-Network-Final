@@ -52,11 +52,20 @@ class ResumeUpload extends React.Component {
                 method: "POST",
                 data: resumeData
             }).then(res=> {
-                if (res.data.RCB_RESUME_EXISTS_INFO){
-                    localStorage.setItem("RCB_RESUME_EXISTS_INFO", JSON.stringify(res.data.RCB_RESUME_EXISTS_INFO)); 
+                if (res.data.RCB_RESUME_EXISTS_INFO === "That profession already exist. Please delete the current resume first, then upload a new one."){
+                    localStorage.setItem("RCB_RESUME_EXISTS_INFO", JSON.stringify(res.data.RCB_RESUME_EXISTS_INFO));
+                    document.getElementById("resumeExists").setAttribute("class","show card red white-text col");
+                    window.location.reload();
+                    setTimeout(() => {
+                        document.getElementById("resumeExists").setAttribute("class", "hide");
+                    }, 10000);
+                }else{
+                    localStorage.removeItem("RCB_RESUME_EXISTS_INFO");
+                    localStorage.setItem("RCB_CURRENT_RESUMES", JSON.stringify(res.data));
+                    window.location.reload();
+                    console.log(res.data)
                 }
-                localStorage.setItem("RCB_CURRENT_RESUMES", JSON.stringify(res.data));
-                window.location.reload();
+                
                 // Show links to uploaded resumes
                 console.log(res);
             }).catch(err => console.log(err));//End of sending data to our database
