@@ -56,6 +56,7 @@ class ResumeUpload extends React.Component {
                     localStorage.setItem("RCB_RESUME_EXISTS_INFO", JSON.stringify(res.data.RCB_RESUME_EXISTS_INFO)); 
                 }
                 localStorage.setItem("RCB_CURRENT_RESUMES", JSON.stringify(res.data));
+                window.location.reload();
                 // Show links to uploaded resumes
                 console.log(res);
             }).catch(err => console.log(err));//End of sending data to our database

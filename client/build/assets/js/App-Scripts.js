@@ -3,6 +3,8 @@ $(document).ready(function () {
     $('.modal').modal();
     // Select initialization
     $('select').formSelect();
+    // Collapsible
+    $('.collapsible').collapsible();
     
     // Google Sign In
     onSignIn = (googleUser) => {
@@ -86,5 +88,9 @@ $(document).ready(function () {
             $('#searchIcon').attr('disabled', false)
         }
        
+    })
+
+    $('#searchIcon').click(function(){
+       document.getElementById('test').setAttribute('class', 'hide');
     })
 });
