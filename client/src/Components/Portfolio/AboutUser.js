@@ -8,11 +8,11 @@ class UserAbout extends React.Component {
                 <div style={{ minHeight: 495 }} className="card blue-grey lighten-1">
                     <div className="card-content white-text">
                         <div className="row">
-                            <div className="col s6 m6">
+                            <div className="col s12 m6">
                                 <h4 id="userEmail" email={this.props.email} className="white-text">{this.props.firstName}</h4>
                             </div>
-                            <div className="col s6 m6">
-                                <a href="/update-profile" className="btn btn-large waves-effect waves-light white-text" style={{ width: "100%"}}>UPDATE YOUR PROFILE</a>
+                            <div className="col s12 m6">
+                                <a href="/update-profile" className="btn waves-effect waves-light white-text" style={{ width: "100%"}}>UPDATE YOUR PROFILE</a>
                             </div>
                         </div>
 
@@ -28,10 +28,10 @@ class UserAbout extends React.Component {
                                     
                                     <span className="new badge" data-badge-caption=" Resume(s)">
                                     {
-                                        (JSON.parse(localStorage.getItem("RCB_CURRENT_RESUMES")) != undefined) 
-                                        ? 
-                                        JSON.parse(localStorage.getItem("RCB_CURRENT_RESUMES")).professions.length
-                                        : 0
+                                        (localStorage.getItem("RCB_CURRENT_RESUMES") === null)
+                                            ? 
+                                            0
+                                            : JSON.parse(localStorage.getItem("RCB_CURRENT_RESUMES")).professions.length
                                     }
                                     </span>
                                 </div>
@@ -40,8 +40,11 @@ class UserAbout extends React.Component {
                                 
                                     <div className="collection ">
                                         {
-                                            (JSON.parse(localStorage.getItem("RCB_CURRENT_RESUMES")) != undefined)
+                                            (localStorage.getItem("RCB_CURRENT_RESUMES") === null)
                                             ?
+                                            <p>You currently don't have any resume cached. Follow the link below to start uploading</p>
+                                            
+                                            : 
                                             JSON.parse(localStorage.getItem("RCB_CURRENT_RESUMES")).professions.map((profession, index) => (
                                                 <Resumes
                                                     key={index}
@@ -49,7 +52,6 @@ class UserAbout extends React.Component {
                                                     resumeLink={profession.resumeLink}
                                                 />
                                             ))
-                                            : <p>You currently don't have any resume cached. Follow the link below to start uploading</p>
                                         }
 
                                     </div>
