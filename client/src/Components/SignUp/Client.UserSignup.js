@@ -1,6 +1,7 @@
 import React from 'react';
 import InformationSection from './../InformationSection';
 import GBMHead from './../GBMHead';
+import styles from './Client.UserSignup.css';
 
 
 class Signup extends React.Component {
@@ -111,6 +112,10 @@ class Signup extends React.Component {
       userSignUpForm = (
         <div className="App">
 
+        
+
+
+<div className= "background"></div>
           <div className="showcase container">
             <div className="row">
               <div className="col s12 m10 offset-m1 center">
@@ -242,6 +247,7 @@ class Signup extends React.Component {
         <GBMHead />
         {userSignUpForm}
       </div>
+    
     )
   }
 
