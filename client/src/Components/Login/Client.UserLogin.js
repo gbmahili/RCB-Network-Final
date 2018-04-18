@@ -47,6 +47,8 @@ class UserLogin extends React.Component {
                 if(body){
                     localStorage.removeItem("RCB_USER");
                     localStorage.setItem("RCB_USER", JSON.stringify(body));
+                    localStorage.removeItem("RCB_CURRENT_RESUMES");
+                    localStorage.setItem("RCB_CURRENT_RESUMES", JSON.stringify(body));
                     // Update the state with the data from the database
                     this.setState({
                         currentUserId: body._id,
@@ -57,8 +59,6 @@ class UserLogin extends React.Component {
                         if (this.state.currentUserId) {
                             window.location.href = "/portfolio"
                         }
-                        // Redirect user to the portfolio page
-                        console.log("STATE UPDATED")
 
                     });
                 }else{

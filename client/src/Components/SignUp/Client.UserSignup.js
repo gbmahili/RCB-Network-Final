@@ -68,6 +68,8 @@ class Signup extends React.Component {
         localStorage.removeItem("RCB_USER");
         // Set new storage data
         localStorage.setItem("RCB_USER", JSON.stringify(body));
+        localStorage.removeItem("RCB_CURRENT_RESUMES");
+        localStorage.setItem("RCB_CURRENT_RESUMES", JSON.stringify(body));
           // Get storage Data for validation and process
         let RCB_USER = JSON.parse(localStorage.getItem("RCB_USER"));
         // If the user does not exist in the DB: DB is validating against email
