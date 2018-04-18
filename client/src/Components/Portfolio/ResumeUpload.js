@@ -55,7 +55,6 @@ class ResumeUpload extends React.Component {
                 if (res.data.RCB_RESUME_EXISTS_INFO === "That profession already exist. Please delete the current resume first, then upload a new one."){
                     localStorage.setItem("RCB_RESUME_EXISTS_INFO", JSON.stringify(res.data.RCB_RESUME_EXISTS_INFO));
                     document.getElementById("resumeExists").setAttribute("class","show card red white-text col");
-                    window.location.reload();
                     setTimeout(() => {
                         document.getElementById("resumeExists").setAttribute("class", "hide");
                     }, 10000);
