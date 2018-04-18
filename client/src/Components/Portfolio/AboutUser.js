@@ -18,8 +18,6 @@ class UserAbout extends React.Component {
 
                         <p>You can add your profession and resume below.</p>
 
-
-
                         <ul className="collapsible">
                             <li>
                                 <div className="collapsible-header black-text">
@@ -35,8 +33,7 @@ class UserAbout extends React.Component {
                                     }
                                     </span>
                                 </div>
-                                <div className="collapsible-body">
-                                
+                                <div className="collapsible-body"> 
                                 
                                     <div className="collection ">
                                         {
@@ -53,28 +50,16 @@ class UserAbout extends React.Component {
                                                 />
                                             ))
                                         }
-
                                     </div>
-                                
-                                
-                                
-                                
                                 </div>
                             </li>
                             
                         </ul>
-
-
-
-
-
-
-
-                        
                     </div>
+
                     <div className="card-action">
                         <a className="waves-effect waves-light modal-trigger" href="#modal1">Add Resume</a>
-                        {/* <a href="/update-profile" className="btn btn-large waves-effect waves-light white-text" style={{ width: "100%", position:"fixed", bottom:0, left:0 }}>UPDATE YOUR PROFILE</a> */}
+                        <div id="resumeExists" className="hide card red white-text col"> A resume fot that profession already exist. Please select a different profession.</div>
                     </div>
                 </div>
                 <ResumeUpload />
