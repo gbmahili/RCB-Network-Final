@@ -28,7 +28,10 @@ class UserAbout extends React.Component {
                                     
                                     <span className="new badge" data-badge-caption=" Resume(s)">
                                     {
+                                        (JSON.parse(localStorage.getItem("RCB_CURRENT_RESUMES")) != undefined) 
+                                        ? 
                                         JSON.parse(localStorage.getItem("RCB_CURRENT_RESUMES")).professions.length
+                                        : 0
                                     }
                                     </span>
                                 </div>
@@ -37,16 +40,16 @@ class UserAbout extends React.Component {
                                 
                                     <div className="collection ">
                                         {
-
+                                            (JSON.parse(localStorage.getItem("RCB_CURRENT_RESUMES")) != undefined)
+                                            ?
                                             JSON.parse(localStorage.getItem("RCB_CURRENT_RESUMES")).professions.map((profession, index) => (
                                                 <Resumes
                                                     key={index}
                                                     professionName={profession.professionName}
                                                     resumeLink={profession.resumeLink}
                                                 />
-                                            )
-
-                                            )
+                                            ))
+                                            : <p>You currently don't have any resume cached. Follow the link below to start uploading</p>
                                         }
 
                                     </div>
