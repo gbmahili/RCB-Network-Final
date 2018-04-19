@@ -1,13 +1,12 @@
 // Get dependencies
 import React from "react";
 import request from 'superagent';
-
-
 // Get child components
 import UserPicture from "./UserPicture";
 import UserAbout from "./AboutUser";
 import InformationSection from "./../InformationSection";
 import Search from './../search';
+import NavBar from '../Home/NavBar';
 
 // Instantiate cloudinary variables
 const CLOUDINARY_UPLOAD_PRESET = 'rcbnetworkfinal';
@@ -109,6 +108,15 @@ class Portfolio extends React.Component {
             }
         });
     }
+
+    // Logout
+    logout = e => {
+        console.log("Clicked logout")
+        // Remove storage data
+        localStorage.removeItem("RCB_USER");
+        localStorage.removeItem("RCB_CURRENT_RESUMES");
+        window.location.href = "/"
+    }
    
     // Render Components
     render() {
@@ -156,9 +164,17 @@ class Portfolio extends React.Component {
         // Render one document
         return (
             <div>
-                <Search />   
-                <div id='test'>
-                {userPortfolio}
+                <NavBar
+                    loginOrLogout={this.state.firstName}
+                    signUpOrName="Logout"
+                    loginOrLogoutLink="/update-profile"
+                    logoutFunction={this.logout}
+                />
+                <div className="container"> 
+                    <Search />
+                    <div id='test'>
+                        {userPortfolio}
+                    </div>
                 </div>
             </div>
         );

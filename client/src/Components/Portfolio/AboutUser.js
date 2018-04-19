@@ -56,11 +56,14 @@ class UserAbout extends React.Component {
                             
                         </ul>
                     </div>
-
                     <div className="card-action">
-                        <a className="waves-effect waves-light modal-trigger" href="#modal1">Add Resume</a>
-                        <div id="resumeExists" className="hide card red white-text col"> A resume fot that profession already exist. Please select a different profession.</div>
+                        <a className="waves-effect waves-light modal-trigger" href="#modal1">Add Resume</a> 
                     </div>
+                    <div style={{ padding: 10 }}
+                        id="resumeExists"
+                        className="hide row card red white-text row card col s12 m12 center-align">
+                        A resume fot that profession already exist. Please select a different profession.
+                        </div>
                 </div>
                 <ResumeUpload />
             </div>

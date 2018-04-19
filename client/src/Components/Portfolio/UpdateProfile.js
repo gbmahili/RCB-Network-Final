@@ -1,5 +1,6 @@
 import React from 'react';
 import InformationSection from './../InformationSection';
+import NavBar from '../Home/NavBar';
 
 
 class UpdateProfile extends React.Component {
@@ -118,21 +119,20 @@ class UpdateProfile extends React.Component {
             });//end of response
     };
 
-
     render() {        
 
         //Render based on user existing or not
         let userUpdateProfile;
         if (this.state.userIsLoggedIn) {
             userUpdateProfile = (
-                <div className="row blue-grey center card white-text" style={{ padding: 15 }}>
+                <div className="row blue-grey center card white-text" style={{ padding: 5 }}>
 
-                    <div className="row showcase container " style={{ padding: 15 }}>
+                    <div className="row showcase container " style={{ padding: 5 }}>
                         <h4 className="white-text" >Welcome, {this.state.firstName}</h4>
                         <p>You can update your profile below and click submit when you are done</p>
                     </div>
 
-                    <form className="form-area card" style={{ padding: 30 }}>
+                    <form className="form-area card" style={{ padding: 10 }}>
 
                         <div className="row">
                             <div className="input-field col m6 s12">
@@ -251,7 +251,10 @@ class UpdateProfile extends React.Component {
 
         return (
             <div>
-                {userUpdateProfile}
+                <NavBar />
+                <div className="container">
+                    {userUpdateProfile}
+                </div>
             </div>
         )
     }

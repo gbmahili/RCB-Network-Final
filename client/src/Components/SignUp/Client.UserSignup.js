@@ -1,7 +1,7 @@
 import React from 'react';
 import InformationSection from './../InformationSection';
-import GBMHead from './../GBMHead';
 import './Client.UserSignup.css';
+import NavBar from '../Home/NavBar';
 
 
 class Signup extends React.Component {
@@ -111,13 +111,12 @@ class Signup extends React.Component {
     //Render based on user existing or not
     let userSignUpForm;
     if (this.state.userDoesNotExists) {
+
       userSignUpForm = (
-        <div className="App">
 
-        
+    <div className="App container">
 
-
-<div className= "background"></div>
+        <div className= "background"></div>
           <div className="showcase container">
             <div className="row">
               <div className="col s12 m10 offset-m1 center">
@@ -234,19 +233,25 @@ class Signup extends React.Component {
       );
     } else {
       userSignUpForm = (
-        <InformationSection
-          windowStyle="blue-grey"
-          informationTitle="Account exists"
-          mainMessage="It looks like you already have an account. Please click below to login!"
-          loginButton="Login"
-          signupButton=""
-        />
+        
+          
+          <InformationSection
+            windowStyle="blue-grey"
+            informationTitle="Account exists"
+            mainMessage="It looks like you already have an account. Please click below to login!"
+            loginButton="Login"
+            signupButton=""
+          />
+        
       );
     };
 
     return (
       <div>
-        <GBMHead />
+        <NavBar
+          loginOrLogout="Login"
+          loginOrLogoutLink="/login"
+        />} 
         {userSignUpForm}
       </div>
     
