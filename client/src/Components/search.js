@@ -27,7 +27,7 @@ class Search extends Component {
     
 
     sendProfessions = () => {
-        document.getElementById('link').setAttribute('class', 'show blue-grey lighten-2 white-text row card col s12 m12 center-align')
+        document.getElementById('link').setAttribute('class', 'show btn blue-grey lighten-2 white-text row card col s12 m12 center-align')
         const getProfession = {   
             professionName: this.state.professionName
         };
@@ -159,7 +159,7 @@ class Search extends Component {
            
         </div>
        
-        <a  className='hide' id='link' href="/portfolio">Back to profile</a> 
+        <a  className='hide' id='link' href="/portfolio">Back to profile</a>
         
         </div>
        
