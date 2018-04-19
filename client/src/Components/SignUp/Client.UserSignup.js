@@ -251,7 +251,7 @@ class Signup extends React.Component {
         <NavBar
           loginOrLogout="Login"
           loginOrLogoutLink="/login"
-        />} 
+        /> 
         {userSignUpForm}
       </div>
     
