@@ -1,6 +1,7 @@
 // Get dependencies
 import React from "react";
 import LoginWithGoogle from "./Client.LoginWithGoogle";
+import NavBar from "../Home/NavBar";
 
 class UserLogin extends React.Component {
         state = {
@@ -93,49 +94,57 @@ class UserLogin extends React.Component {
     // Render Components
     render() {
         return (
-            <div className="row card">
-                <form className="col s12 m6 offset-m3">
-                    <div className="row"> 
+            <div>
+                <NavBar                    
+                    signUpOrName="Create Account"
+                    signUpOrEditProfileLink="/signup"
+                />
+                <div className="container grey lighten-3" style={{ padding: 150 }}>
+                <p className="center-align">Please login with your email or with a Google registered email.</p>
+                <div className="row card" >
+                    <form className="col s12 m4 offset-m4">
+                        <div className="row"> 
+                            <div className="input-field col s12">
+                            <input
+                                type="text"
+                                placeholder="Email"
+                                name="userEmail"
+                                value={this.state.userEmail}
+                                onChange={this.handleInputChange}
+                                required
+                            />
+                        </div>
                         <div className="input-field col s12">
-                        <input
-                            type="text"
-                            placeholder="Email"
-                            name="userEmail"
-                            value={this.state.userEmail}
-                            onChange={this.handleInputChange}
-                            required
-                        />
-                    </div>
-                    <div className="input-field col s12">
-                        <input
-                            type="password"
-                            placeholder="Password"
-                            name="userPassword"
-                            value={this.state.userPassword}
-                            onChange={this.handleInputChange}
-                            required
-                        />
-                    </div>
-                    <div className="input-field col s12">
-                        <div className="row">
-                            <div className="col s12 m6 input-field">
-                                    <button className="btn waves-effect waves-light" onClick={this.handleLogin} >
-                                        <i className="material-icons left">account_box</i> Sign in 
-                                    </button>
-                            </div>
-                            <div className="col s12 m6 input-field" >
-                                {/* Sign in With Google */}
-                                <LoginWithGoogle />
-                            </div>
+                            <input
+                                type="password"
+                                placeholder="Password"
+                                name="userPassword"
+                                value={this.state.userPassword}
+                                onChange={this.handleInputChange}
+                                required
+                            />
                         </div>
-                        <div id="rcb_no_user" className="row hide blue-grey white-text center-align card" style={{ padding: 10, fontSize: 14}}>
-                            {/* Message will go here */}
+                        <div className="input-field col s12">
+                            <div className="row">
+                                <div className="col s12 m6 input-field">
+                                        <button className="btn waves-effect waves-light" onClick={this.handleLogin} >
+                                            <i className="material-icons left">account_box</i> Sign in 
+                                        </button>
+                                </div>
+                                <div className="col s12 m6 input-field" >
+                                    {/* Sign in With Google */}
+                                    <LoginWithGoogle />
+                                </div>
+                            </div>
+                            <div id="rcb_no_user" className="row hide blue-grey white-text center-align card" style={{ padding: 10, fontSize: 14}}>
+                                {/* Message will go here */}
+                            </div>
+                            
                         </div>
-                           
-                    </div>
-                    </div>
-                </form>
-                
+                        </div>
+                    </form>
+                </div>
+                </div>
             </div>
         );
     };

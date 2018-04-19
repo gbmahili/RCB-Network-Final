@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import API from '../utils/routes'; 
 import Display from './display';
-import GBMHead from './GBMHead';
 // import { isNull } from 'util';
 
 class Search extends Component {
@@ -37,11 +36,7 @@ class Search extends Component {
             this.setState({ userInfo }, () => {
                 console.log(userInfo.length)
                 if(userInfo.length === 0){
-                    // document.getElementById('test').setAttribute('class', 'hide');
-                    document.getElementById('default').setAttribute('class', 'show');
-                    // setTimeout(function(){
-                    // document.getElementById('default').setAttribute('class', 'hide');
-                    // }, 10000)
+                    document.getElementById('default').setAttribute('class', 'show red white-text row card col s12 m12 center-align');
                 }else{
                     document.getElementById('default').setAttribute('class', 'hide');
                 }
@@ -54,7 +49,7 @@ class Search extends Component {
     render() {
         return(
             <div>
-                <GBMHead />
+                
                 <div className="row">
                     <div className="input-field col s12">
                         <div className="col s10 m10" >
@@ -126,12 +121,14 @@ class Search extends Component {
                     </div>
                     </div>
         <div className= 'row'>
-            <div className= ' blue-grey lighten-2'>
-                <h1
-                id= 'default'
-            className='hide'>
-                No match
-            </h1>       
+
+            <div className= 'blue-grey lighten-2'>
+
+                <div id='default' className='hide' style={{padding: 10}}>
+                    Unfortunately, we could not find a match for your search. <br/>
+                    Please check back later.
+                </div>
+                
             
                 {
                     this.state.userInfo.map((element, i) => (
