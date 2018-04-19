@@ -58,7 +58,8 @@ class UserLogin extends React.Component {
                         userProfilePicture: body.UserProfilePicture
                     }, () => {
                         if (this.state.currentUserId) {
-                            window.location.href = "/portfolio"
+                            console.log(body._id);
+                            window.location.href = "/portfolio";
                         }
 
                     });
@@ -99,8 +100,14 @@ class UserLogin extends React.Component {
                     signUpOrName="Create Account"
                     signUpOrEditProfileLink="/signup"
                 />
-                <div className="container grey lighten-3" style={{ padding: 150 }}>
+                <div className="container grey lighten-3" style={{ paddingTop: 150 }}>
+
+                
+                <div className="col s12 m12 l12">
+
                 <p className="center-align">Please login with your email or with a Google registered email.</p>
+
+
                 <div className="row card" >
                     <form className="col s12 m4 offset-m4">
                         <div className="row"> 
@@ -132,18 +139,26 @@ class UserLogin extends React.Component {
                                         </button>
                                 </div>
                                 <div className="col s12 m6 input-field" >
-                                    {/* Sign in With Google */}
+                                   
                                     <LoginWithGoogle />
                                 </div>
                             </div>
                             <div id="rcb_no_user" className="row hide blue-grey white-text center-align card" style={{ padding: 10, fontSize: 14}}>
-                                {/* Message will go here */}
+                               
                             </div>
-                            
                         </div>
                         </div>
                     </form>
+               
+               
                 </div>
+
+                </div>
+
+               
+
+
+
                 </div>
             </div>
         );
