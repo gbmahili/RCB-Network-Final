@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import API from '../utils/routes'; 
 import Display from './display';
+import Back from './back';
 // import { isNull } from 'util';
 
 class Search extends Component {
@@ -22,8 +23,11 @@ class Search extends Component {
         event.preventDefault();
         this.sendProfessions();
     };
+    
+    
 
     sendProfessions = () => {
+        document.getElementById('link').setAttribute('class', 'show btn blue-grey lighten-2 white-text row card col s12 m12 center-align')
         const getProfession = {   
             professionName: this.state.professionName
         };
@@ -120,10 +124,11 @@ class Search extends Component {
                     
                     </div>
                     </div>
+                    
         <div className= 'row'>
-
+       
             <div className= 'blue-grey lighten-2'>
-
+                
                 <div id='default' className='hide' style={{padding: 10}}>
                     Unfortunately, we could not find a match for your search. <br/>
                     Please check back later.
@@ -148,9 +153,14 @@ class Search extends Component {
                         ))
                     ))
                 } 
+               
            
-            </div>     
+            </div>   
+           
         </div>
+       
+        <a  className='hide' id='link' href="/portfolio">Back to profile</a>
+        
         </div>
        
         )

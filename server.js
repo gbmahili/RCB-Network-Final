@@ -21,7 +21,7 @@ const PORT = process.env.PORT || 3001;
 mongoose.Promise = Promise;
 // Connect to the Mongo DB
 const  MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/rcb";
-mongoose.connect(MONGODB_URI)
+mongoose.connect(MONGODB_URI);
 
 //Configure middleware
 //====================
@@ -40,7 +40,7 @@ app.use(routes);
 require("./routes/uploadPicture")(app);
 require("./routes/uploadResume")(app);
 require("./routes/Server.UserLogin")(app);
-require("./routes/Server.UserSignup")(app);
+// require("./routes/Server.UserSignup")(app);
 require("./routes/Server.UpdateProfile")(app);
 require('./routes/getprofessions')(app);
 app.get("*", (req, res) => {
@@ -49,4 +49,5 @@ app.get("*", (req, res) => {
 // Listen to the port
 app.listen(PORT, function(){
     console.log(`app listening to ${PORT}`);
-})
+});
+// End of the server call.
