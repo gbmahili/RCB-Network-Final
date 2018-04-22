@@ -45,7 +45,23 @@ require("./routes/Server.UpdateProfile")(app);
 require('./routes/getprofessions')(app);
 app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "client/build", "index.html"));
-})
+});
+app.post('/api/users', (req, res) => {
+    let loginInfo = req.body;
+
+    db.Users.find({}, (err, response) => {
+        console.log(response)
+        res.json(response)
+    })
+
+    //Send data to the database
+    // db.Users.findOne(query, (err, serverResponseData) => {
+    //     if (err) return res.send(500, { error: err });
+    //     console.log(serverResponseData);
+    //     res.json(serverResponseData);
+    // });
+
+});
 // Listen to the port
 app.listen(PORT, function(){
     console.log(`app listening to ${PORT}`);
