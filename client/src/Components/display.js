@@ -11,7 +11,7 @@ class Display extends Component {
                 <div className="card-content" style={{backgroundColor:'black', color:'white', textAlign:'center', marginBottom:5}} >
                     <span className="card-title"></span>
                     <div id="profession" style= {{backgroundColor:'black', color:'white', textAlign:'center', marginBottom:5, fontSize:14}} > {this.props.professionName.toUpperCase()}</div>
-                    <div id="firstName" style= {{backgroundColor:'teal', color:'white', textAlign:'center', marginBottom:5, fontSize:16}} >{this.props.firstName.toUpperCase()}, {this.props.lastName.toUpperCase()}</div>	
+                    <div id="firstName" style= {{backgroundColor:'teal', color:'white', textAlign:'center', marginBottom:5, fontSize:16}} >{this.props.firstName} {this.props.lastNames}</div>	
                     <div id="City" style= {{backgroundColor:'black', color:'white', textAlign:'center',  fontSize:14}}>{this.props.city.toUpperCase()}, {this.props.stateName.toUpperCase()}</div>    
                 </div>
                 <div className="card-action">
