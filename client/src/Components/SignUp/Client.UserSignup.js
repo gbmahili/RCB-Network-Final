@@ -1,6 +1,7 @@
 import React from 'react';
 import InformationSection from './../InformationSection';
-import GBMHead from './../GBMHead';
+import './Client.UserSignup.css';
+import NavBar from '../Home/NavBar';
 
 
 class Signup extends React.Component {
@@ -67,6 +68,8 @@ class Signup extends React.Component {
         localStorage.removeItem("RCB_USER");
         // Set new storage data
         localStorage.setItem("RCB_USER", JSON.stringify(body));
+        localStorage.removeItem("RCB_CURRENT_RESUMES");
+        localStorage.setItem("RCB_CURRENT_RESUMES", JSON.stringify(body));
           // Get storage Data for validation and process
         let RCB_USER = JSON.parse(localStorage.getItem("RCB_USER"));
         // If the user does not exist in the DB: DB is validating against email
@@ -108,9 +111,12 @@ class Signup extends React.Component {
     //Render based on user existing or not
     let userSignUpForm;
     if (this.state.userDoesNotExists) {
-      userSignUpForm = (
-        <div className="App">
 
+      userSignUpForm = (
+
+    <div className="App container">
+
+        <div className= "background"></div>
           <div className="showcase container">
             <div className="row">
               <div className="col s12 m10 offset-m1 center">
@@ -227,21 +233,28 @@ class Signup extends React.Component {
       );
     } else {
       userSignUpForm = (
-        <InformationSection
-          windowStyle="blue-grey"
-          informationTitle="Account exists"
-          mainMessage="It looks like you already have an account. Please click below to login!"
-          loginButton="Login"
-          signupButton=""
-        />
+        
+          
+          <InformationSection
+            windowStyle="blue-grey"
+            informationTitle="Account exists"
+            mainMessage="It looks like you already have an account. Please click below to login!"
+            loginButton="Login"
+            signupButton=""
+          />
+        
       );
     };
 
     return (
       <div>
-        <GBMHead />
+        <NavBar
+          loginOrLogout="Login"
+          loginOrLogoutLink="/login"
+        /> 
         {userSignUpForm}
       </div>
+    
     )
   }
 

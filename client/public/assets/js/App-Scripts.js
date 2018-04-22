@@ -3,6 +3,8 @@ $(document).ready(function () {
     $('.modal').modal();
     // Select initialization
     $('select').formSelect();
+    // Collapsible
+    $('.collapsible').collapsible();
     
     // Google Sign In
     onSignIn = (googleUser) => {
@@ -25,7 +27,9 @@ $(document).ready(function () {
                 console.log(body)
                 localStorage.removeItem("RCB_USER");
                 localStorage.setItem("RCB_USER", JSON.stringify(body));
-                if (body.RCB_NO_GOOLE_USER_IN_DB) {                    
+                localStorage.removeItem("RCB_CURRENT_RESUMES");
+                localStorage.setItem("RCB_CURRENT_RESUMES", JSON.stringify(body));
+                if (body.RCB_NO_GOOLE_USER_IN_DB) {
                     const messageDiv = `
                         <p>
                             Your are currently logged into Google as: <b> <span id="google_account_email"></span> </b> <br/>
