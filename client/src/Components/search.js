@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import API from '../utils/routes'; 
 import Display from './display';
-import Back from './back';
-// import { isNull } from 'util';
 
 class Search extends Component {
   constructor(props){
