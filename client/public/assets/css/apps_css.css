@@ -1,5 +1,13 @@
 @media only screen and (max-width: 600px) {
-    body {
-        background-color: lightblue;
+   .brand-logo {
+       color: white !important;
+       font-size: 15px !important;
+    }
+
+    .textOnHeader {
+        font-size: 25px !important;
+        text-align: center;
+        /* font-weight: bold; */
+       
     }
 }
