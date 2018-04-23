@@ -17,7 +17,6 @@ module.exports = app => {
     function(error, document){
         if (error) throw error;
         res.json(document);
-        console.log(document)
     }
     )
     });

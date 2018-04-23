@@ -9,8 +9,6 @@ module.exports = app => {
         db.Users.findOne(query, (err, users) => {
             // Check if the db has the user:            
             if (users) {
-                console.log("SIGN_UP EMAIL", signupInfo.email)
-                console.log("DB EMAIL", users.email)
                 res.json({ "Error": "There is a user with that email. Please login instead." })
                 return;
             } else {
