@@ -9,6 +9,7 @@ import Search from './Components/search';
 import UpdateProfile from './Components/Portfolio/UpdateProfile';
 import NavBar from './Components/Home/NavBar';
 import WelcomePage from './Components/Home/WelcomePage';
+
 // import Footer from './Components/Home/Footer';
 // *End - Nancy compontent import
 const App = () =>
@@ -22,8 +23,8 @@ const App = () =>
       <Route exact path='/update-profile' component={UpdateProfile} />
       <Route exact path="/" render={(props) => 
         <NavBar {...props}
-          loginOrLogout="Login"  
-          signUpOrName="Sign Up" 
+          loginOrLogout=""  
+          signUpOrName="" 
           loginOrLogoutLink="/login" 
           signUpOrEditProfileLink="/signup" 
            />} 

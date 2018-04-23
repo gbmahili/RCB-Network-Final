@@ -12,17 +12,17 @@ class WelcomePage extends React.Component {
                         padding: "0 1.6rem",
                         fontSize: "28px",
                         fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
-                        backgroundColor: "snow"
+                       
                     }}
                 >
-                    <h1>Welcome to RCB Network</h1>
+                    <h1 className="textOnHeader">Welcome to RCB Network</h1>
                 </div>
 
                 <div className="row">
                     <div className="col s12 m8 offset-m2">
                         <div className="card cyan darken-1">
                             <div className="card-content white-text">
-                                <span className="card-title">Where Developers Meet</span>
+                                <span className="card-title textOnHeader">Where Developers Meet</span>
 
                                 <div style={{ fontSize: "1.5rem", fontFamily: "'Gamja Flower', cursive"}}>
                                     <span style={{fontSize: "1.2em", fontWeight: 400}}>A message from Veena, Nancy, Miles and Baraka </span>
