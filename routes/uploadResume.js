@@ -29,7 +29,6 @@ module.exports = app => {
                             { email: resumeData.userEmail }, {professions: 1},
                             function (err, allResumes) {
                                 if (err) return res.send(500, { error: err });
-                                console.log("MONGODB_RESPONSE_NEW_URL: ", allResumes);
                                 res.json(allResumes);
                             }
                         );

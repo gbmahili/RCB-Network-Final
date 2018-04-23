@@ -11,7 +11,6 @@ module.exports = app => {
         //Send data to the database
         db.Users.findOne(query, (err, serverResponseData) => {
             if (err) return res.send(500, { error: err });
-            console.log(serverResponseData);
             res.json(serverResponseData);
         });
 
