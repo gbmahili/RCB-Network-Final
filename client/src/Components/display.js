@@ -18,7 +18,7 @@ class Display extends Component {
                     <a href={"mailto:" + this.props.email + "?Subject=Rutgers%20BootCamp%20Network%2018%20Connection%20Request"} target="_top" title="Send an email">
                     <i className='material-icons  teal-text lighten-1 right'>email</i>
                     </a>
-                    <a href={this.props.resumeLink} title="View or Download Resume">
+                    <a href={this.props.resumeLink} title="View or Download Resume" resumeicon="resumeIcon">
                     <i className='material-icons  teal-text lighten-1 right'>description</i>
                     </a>
                 </div>

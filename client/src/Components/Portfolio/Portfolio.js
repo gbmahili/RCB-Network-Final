@@ -177,6 +177,7 @@ class Portfolio extends React.Component {
                         {userPortfolio}
                     </div>
                 </div>
+               
             </div>
         );
     };

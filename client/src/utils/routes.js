@@ -9,5 +9,9 @@ export default {
 
     getUsers: function(professionName){
       return axios.post('/getprofession', professionName);
+    },
+
+    allUsers: function(){
+      return axios.post('/allusers', )
     }
   };  
