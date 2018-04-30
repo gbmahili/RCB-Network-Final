@@ -8,7 +8,8 @@ class Search extends Component {
 
       this.state = { 
           professionName: 'profession',
-          userInfo: []
+          userInfo: [],
+          allusers: []
     };
       
   }
@@ -20,6 +21,7 @@ class Search extends Component {
     onSubmit = (event) => {
         event.preventDefault();
         this.sendProfessions();
+        
     };
     
     
@@ -29,9 +31,23 @@ class Search extends Component {
         const getProfession = {   
             professionName: this.state.professionName
         };
-    
-          // handle the clientside request
-          API.getUsers({getProfession}).then(response => {
+
+        if (getProfession.professionName === 'allUsers'){
+            API.allUsers({getProfession}).then(response => {
+                const allusers = response.data;
+                this.setState({ allusers }, () => {
+                    const query = document.querySelectorAll('[resumeicon="resumeIcon"]')
+                    console.log(query)
+                    query.forEach(element => {
+                        element.setAttribute('class', 'hide')
+                    })
+                    
+                })
+            })
+        }else {
+
+             // handle the clientside request
+             API.getUsers({getProfession}).then(response => {
             const userInfo = response.data;
 
             // Update the state with the new data
@@ -44,8 +60,9 @@ class Search extends Component {
                 }
             });
             // Update the display component with the looped data:
+   
         });
-       
+        }     
     }
     
     render() {
@@ -65,6 +82,10 @@ class Search extends Component {
                         <option
                             value = 'profession'>
                                 Choose your Profession
+                        </option>
+                        <option
+                            value = 'allUsers'>
+                                All Members
                         </option>
                         <option
                             value = 'Full Stack Web Developer'>
@@ -134,7 +155,26 @@ class Search extends Component {
                 
             
                 {
+                    
+                    this.state.professionName === 'allUsers' ?
+                    this.state.allusers.map((dbElement, i1) => (
+                        <Display
+                        key={i1}
+                        UserProfilePicture= {dbElement.UserProfilePicture}
+                        firstName={dbElement.firstName}
+                        lastName={dbElement.lastName}
+                        professionName={'RCB MEMBER'}
+                        city={dbElement.city}
+                        stateName={dbElement.stateName}
+                        email={dbElement.email}
+                       
+                    />
+                    
+                       
+                    )):
+                    //element contains all the users in our database 
                     this.state.userInfo.map((element, i) => (
+                        
                         element.professions.map((professionElement, i2)=> (
                             professionElement.professionName === this.state.professionName ?
                             <Display
@@ -150,6 +190,8 @@ class Search extends Component {
                             />: null
                         ))
                     ))
+                    
+
                 } 
                
            

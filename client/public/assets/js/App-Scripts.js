@@ -97,17 +97,17 @@ $(document).ready(function () {
     });
 
     // Fetch data on load:
-    fetch("/api/users",
-{
-    method: "POST"
-})
-        .then(res => res.json())
-        .then(body => {
-        if(body){
-            console.log(body);
-        }else{
-            console.log("Nothing fetched")
-        }
+//     fetch("/api/users",
+// {
+//     method: "POST"
+// })
+//         .then(res => res.json())
+//         .then(body => {
+//         if(body){
+//             console.log(body);
+//         }else{
+//             console.log("Nothing fetched")
+//         }
         
-    });
+//     });
 });
