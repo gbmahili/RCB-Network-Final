@@ -5,6 +5,8 @@ $(document).ready(function () {
     $('select').formSelect();
     // Collapsible
     $('.collapsible').collapsible();
+    // Initialize sideNav
+    $(".sidenav").sidenav();
     
     // Google Sign In
     onSignIn = (googleUser) => {
