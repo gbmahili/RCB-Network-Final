@@ -100,7 +100,7 @@ class UserLogin extends React.Component {
                     signUpOrName="Create Account"
                     signUpOrEditProfileLink="/signup"
                 />
-                <div className="container grey lighten-3" style={{ paddingTop: 150 }}>
+                <div className="container grey lighten-3" style={{ padding: 10 }}>
 
                 
                 <div className="col s12 m12 l12">
@@ -134,7 +134,7 @@ class UserLogin extends React.Component {
                         <div className="input-field col s12">
                             <div className="row">
                                 <div className="col s12 m6 input-field">
-                                        <button className="btn waves-effect waves-light" onClick={this.handleLogin} >
+                                        <button className="btn waves-effect waves-light" id= 'signinBtn' onClick={this.handleLogin} >
                                             <i className="material-icons left">account_box</i> Sign in 
                                         </button>
                                 </div>

@@ -10,4 +10,36 @@
         /* font-weight: bold; */
        
     }
+
+    #signinBtn {
+        width: 100%;
+    }
+
+
+   
+    #cancelBtn {
+        width: 237px;
+        height: 36px;   
+        text-align: center;  
+    }
+
+    .updateProfileButton,
+    #cancelBtn {
+        margin:10px;
+    }
+    .updateProfileButton {
+  
+        margin-bottom: 0px;
+    }
+   
+
+}
+
+#cancelBtn {
+    width: 188.13px;
+}
+
+.updateProfileButton,
+#cancelBtn {
+    margin: 10px;
 }
