@@ -43,18 +43,23 @@ var UserSchema = new Schema({
           type: String
       },
       city: {
-          type: String
+          type: String,
+          default: "Not Provided"
       },
       stateName: {
-          type: String
+          type: String,
+          default: "NP"
       },
       zipcode: {
           type: String
       },
     professions: {
           type: Array
-      }
-
+    },
+    subscribeUser: {
+        type: Boolean,
+        default: false
+    }
 });
 
 
