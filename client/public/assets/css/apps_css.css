@@ -10,4 +10,16 @@
         /* font-weight: bold; */
        
     }
+
+    #signinBtn {
+        width: 100%;
+    }
+    
+    .abcRioButton{
+        width: 100%;
+        background-color: red;
+    }
+
+
 }
+
