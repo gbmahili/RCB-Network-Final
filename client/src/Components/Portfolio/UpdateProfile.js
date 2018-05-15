@@ -138,15 +138,13 @@ class UpdateProfile extends React.Component {
                             <div className="input-field col m6 s12">
                                 <i className="material-icons prefix">account_circle</i>
                                 <input className="cyan-text darken-3 rcb_required_field" id="firstName" onChange={this.handleInput} name="firstName" value={this.state.firstName} type="text" />
-                                <label className="grey-text" htmlFor="firstName">First Name
-                <span className=" red-text"> *</span>
+                                <label className="grey-text" htmlFor="firstName">First Name<span className=" red-text"> *</span>
                                 </label>
                             </div>
                             <div className="input-field col m6 s12">
                                 <i className="material-icons prefix">account_circle</i>
                                 <input className="cyan-text darken-3 rcb_required_field" id="lastName" onChange={this.handleInput} name="lastName" value={this.state.lastName} type="text" />
-                                <label className="grey-text" htmlFor="lastName">Last Name
-                <span className=" red-text"> *</span>
+                                <label className="grey-text" htmlFor="lastName">Last Name<span className=" red-text"> *</span>
                                 </label>
                             </div>
                         </div>
@@ -155,15 +153,13 @@ class UpdateProfile extends React.Component {
                             <div className="input-field validate col m6 s12">
                                 <i className="material-icons prefix">email</i>
                                 <input className="cyan-text darken-3 rcb_required_field" id="email" onChange={this.handleInput} name="email" value={this.state.email} type="email" />
-                                <label className="grey-text" htmlFor="email">Email
-                  <span className=" red-text"> *</span>
+                                <label className="grey-text" htmlFor="email">Email<span className=" red-text"> *</span>
                                 </label>
                             </div>
                             <div className="input-field col m6 s12">
                                 <i className="material-icons prefix">security</i>
                                 <input className="cyan-text darken-3 rcb_required_field" id="password" onChange={this.handleInput} name="password" type="password" value={this.state.password} />
-                                <label className="grey-text " htmlFor="password">Create Password
-                <span className=" red-text"> *</span>
+                                <label className="grey-text " htmlFor="password">Create Password<span className=" red-text"> *</span>
                                 </label>
                             </div>
                         </div>
@@ -172,8 +168,7 @@ class UpdateProfile extends React.Component {
                             <div className="input-field col m6 s12">
                                 <i className="material-icons prefix">portrait</i>
                                 <input id="gender" onChange={this.handleInput} name="gender" value={this.state.gender} type="text" className="materialize-textarea cyan-text" />
-                                <label className="grey-text darken-3" htmlFor="gender">Gender (Male or Female)
-                </label>
+                                <label className="grey-text darken-3" htmlFor="gender">Gender (Male or Female)</label>
                             </div>
                             <div className="grey-text input-field col m6 s12">
                                 <i className="material-icons prefix">date_range</i>

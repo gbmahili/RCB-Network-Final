@@ -20,16 +20,23 @@ class Signup extends React.Component {
     city: "",
     stateName: "",
     zipCode: "",
-    userDoesNotExists: true
+    userDoesNotExists: true,
+    subscribeUser: false
 
   };
 
   handleInput = event => {
     const { name, value } = event.target
-    this.setState({
-      [name]: value
-    });
+    this.setState({[name]: value});
   };
+  // Subscribe user checkbox
+  handleSubscribeUserCheckbox(event) {
+    this.setState({
+      subscribeUser: !this.state.subscribeUser
+    }
+    , () => console.log(this.state.subscribeUser)
+    );
+  }
 
  
   signUp = e => {
@@ -47,9 +54,10 @@ class Signup extends React.Component {
       telephone: this.state.telephone,
       houseNumber: this.state.houseNumber,
       streetName: this.state.streetName,
-      city: this.state.city,
-      stateName: this.state.stateName,
-      zipCode: this.state.zipCode
+      city: this.state.city !== "" ? this.state.city : "Not Provided",
+      stateName: this.state.stateName !== "" ? this.state.stateName : "NP",
+      zipCode: this.state.zipCode,
+      subscribeUser: this.state.subscribeUser
     };
 
     // Send to the server
@@ -88,7 +96,8 @@ class Signup extends React.Component {
             streetName: body.streetName,
             city: body.city,
             stateName: body.stateName,
-            zipCode: body.zipCode
+            zipCode: body.zipCode,
+            subscribeUser: body.subscribeUser
           }, () => {
             window.location.href = "/portfolio";
             console.log("STATE UPDATED");
@@ -586,6 +595,12 @@ class Signup extends React.Component {
 
             <center>
               <div className="input-field col s12">
+                <p>
+                  <label>
+                  <input type="checkbox" name="subscribeUser" onClick={this.handleSubscribeUserCheckbox.bind(this)}/>
+                    <span>Be the first to know when we make changes to the website.</span>
+                  </label>
+                </p>
                 <button className="btn signUpButton" onClick={this.signUp}>
                   Sign Up <i className="material-icons right">done</i>
                 </button>
@@ -595,8 +610,6 @@ class Signup extends React.Component {
         </div>;
     } else {
       userSignUpForm = (
-        
-          
           <InformationSection
             windowStyle="blue-grey"
             informationTitle="Account exists"
@@ -604,7 +617,6 @@ class Signup extends React.Component {
             loginButton="Login"
             signupButton=""
           />
-        
       );
     };
 
