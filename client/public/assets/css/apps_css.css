@@ -11,8 +11,8 @@
        
     }
 
-    #signinBtn {
-        width: 100%;
+    #signinBtn, .abcRioButtonLightBlue {
+        width: 100% ;
     }
 
 
@@ -43,3 +43,4 @@
 #cancelBtn {
     margin: 10px;
 }
+
