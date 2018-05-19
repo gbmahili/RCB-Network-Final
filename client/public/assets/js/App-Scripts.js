@@ -97,19 +97,4 @@ $(document).ready(function () {
     $('#searchIcon').click(function(){
        document.getElementById('test').setAttribute('class', 'hide');
     });
-
-    // Fetch data on load:
-//     fetch("/api/users",
-// {
-//     method: "POST"
-// })
-//         .then(res => res.json())
-//         .then(body => {
-//         if(body){
-//             console.log(body);
-//         }else{
-//             console.log("Nothing fetched")
-//         }
-        
-//     });
 });
