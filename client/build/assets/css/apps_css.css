@@ -5,7 +5,7 @@
     }
 
     .textOnHeader {
-        font-size: 25px !important;
+        font-size: 22px !important;
         text-align: center;
         /* font-weight: bold; */
        
@@ -42,4 +42,8 @@
 .updateProfileButton,
 #cancelBtn {
     margin: 10px;
+}
+
+.update-page-main-bg-color{
+    background-color: #F6F8FA;
 }
