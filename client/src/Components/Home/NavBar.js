@@ -3,8 +3,8 @@ class NavBar extends React.Component {
     render() {
         return (
             <div>
-                <div className="navbar-fixed teal lighten-2">
-                    <nav className="teal lighten-2" style={{ paddingLeft: 30 }}>
+                <div className={this.props.customClass || "navbar-fixed teal lighten-2"}>
+                    <nav className={this.props.customClass || "navbar-fixed teal lighten-2"} style={{ paddingLeft: 30 }}>
                         <div className="nav-wrapper">
                             <a href="/" className="brand-logo">RCB Network 2018</a>
                             <a href="#!" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
