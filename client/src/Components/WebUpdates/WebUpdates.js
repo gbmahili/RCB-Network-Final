@@ -7,18 +7,22 @@ class WhatsNew extends React.Component {
   render(){
     return(
       <div>
+        {/* NavBar */}
         <NavBar
           loginOrLogout="Login to your account"
           loginOrLogoutLink="/login"
+          customClass="navbar-fixed light-blue darken-4"
         /> 
+      {/* Start of updates: */}
       <div className="container-fluid" style={{ backgroundColor: "#F6F8FA", height: "100%" }}>
-
+        {/* Updates Title */}
         <div className="row">
           <div className="col s12 m6 offset-m3 center">
             <h4 style={{ color: "#24292e", fontSize: 32, fontWeight: 600, }}>What's new</h4>
           </div>
         </div>
 
+        {/* Update components will be shown in this div */}
         <div className="container update-page-main-bg-color">
           <div className="row">
               <div className="col s12 m8 offset-m2">
@@ -30,12 +34,12 @@ class WhatsNew extends React.Component {
                   </ul>
                 </div>
               </div>
-
           </div>
         </div>
 
-      </div>
-
+        </div> {/* End of updates: */}
+      
+        {/* Start of Update Page footer div */}
         <div style=
           {
             { 
@@ -52,10 +56,11 @@ class WhatsNew extends React.Component {
             }
           }>
           <p>This will be updated when we add more features</p>
-          <p>© 2018 RCB-Network  |  <a href="/">Home</a>  |  <a href="/signup">Sign Up</a></p>
-        </div>
+          <p>© {new Date().getFullYear()} RCB-Network  |  <a href="/">Home</a>  |  <a href="/signup">Sign Up</a></p>
+          
+        </div>{/* Start of Update Page footer div */}
 
-      </div>
+      </div> 
     )
   }
 }
