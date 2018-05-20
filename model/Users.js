@@ -23,36 +23,36 @@ var UserSchema = new Schema({
         type: String,
         trim: true,
         required: "Password is Required"
-      }, 
-      gender: {
-          type: String
-      },
-      birthday:{
-          type: String
-      },
-      country:{
-          type: String
-      },
-      telephone:{
-          type: String
-      },
-      housenumber: {
-          type: String
-      },
-      streetName: {
-          type: String
-      },
-      city: {
-          type: String,
-          default: "Not Provided"
-      },
-      stateName: {
-          type: String,
-          default: "NP"
-      },
-      zipcode: {
-          type: String
-      },
+    }, 
+    gender: {
+        type: String
+    },
+    dateOfBirth:{
+        type: String
+    },
+    country:{
+        type: String
+    },
+    telephone:{
+        type: String
+    },
+    houseNumber: {
+        type: String
+    },
+    streetName: {
+        type: String
+    },
+    city: {
+        type: String,
+        default: "Not Provided"
+    },
+    stateName: {
+        type: String,
+        default: "NP"
+    },
+    zipCode: {
+        type: String
+    },
     professions: {
           type: Array
     },

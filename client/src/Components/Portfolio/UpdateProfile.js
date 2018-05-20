@@ -226,7 +226,7 @@ class UpdateProfile extends React.Component {
                             
                                 <button className="btn updateProfileButton" onClick={this.updateProfile} >UPDATE PROFILE <i className="material-icons right">done</i></button> 
                                
-                                <a href="/portfolio" className="btn red" id="cancelBtn">CANCEL<i class="material-icons right">clear</i></a>
+                                <a href="/portfolio" className="btn red" id="cancelBtn">CANCEL<i className="material-icons right">clear</i></a>
                                
                                 
                             </div>
