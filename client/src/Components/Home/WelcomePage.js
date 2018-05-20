@@ -15,7 +15,7 @@ class WelcomePage extends React.Component {
                        
                     }}
                 >
-                    <h1 className="textOnHeader">Welcome to RCB Network</h1>
+                    <h3 className="textOnHeader center">Welcome to RCB Network</h3>
                 </div>
 
                 <div className="row">

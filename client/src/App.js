@@ -9,6 +9,7 @@ import Search from './Components/search';
 import UpdateProfile from './Components/Portfolio/UpdateProfile';
 import NavBar from './Components/Home/NavBar';
 import WelcomePage from './Components/Home/WelcomePage';
+import WhatsNew from './Components/WebUpdates/WebUpdates';
 
 // import Footer from './Components/Home/Footer';
 // *End - Nancy compontent import
@@ -30,6 +31,8 @@ const App = () =>
            />} 
       />
       <Route exact path='/' component={WelcomePage} />
+      {/* WebUpdates */}
+      <Route exact path='/whats-new' component={WhatsNew} />
       {/* <Route exact path='/' component={Footer} /> */}
       {/* Miles's components */}
       <Route exact path='/signup' component= {Signup}/>
