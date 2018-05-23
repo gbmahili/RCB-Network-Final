@@ -39,6 +39,7 @@ app.use(routes);
 // For uploading pictures
 require("./routes/uploadPicture")(app);
 require("./routes/uploadResume")(app);
+require("./routes/deleteResume")(app);
 require("./routes/Server.UserLogin")(app);
 require("./routes/Server.UserSignup")(app);
 require("./routes/Server.UpdateProfile")(app);

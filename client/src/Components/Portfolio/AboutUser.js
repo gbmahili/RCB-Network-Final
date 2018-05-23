@@ -1,8 +1,34 @@
 import React from "react";
 import ResumeUpload from "./ResumeUpload";
-import Resumes from "./Resumes"
-class UserAbout extends React.Component {    
-     render() {  
+import Resumes from "./Resumes";
+import axios from 'axios';
+class UserAbout extends React.Component {
+    //  Send data to the server to delete the resume
+    processDelete = (e) => {
+        // Get query data:
+        let resumeData = {
+            resumeLink: e.target.getAttribute("resumeLink"),
+            userId: e.target.getAttribute("userid")
+        }
+        // Now send to the server
+        axios({
+            url: "/deleteResume",
+            method: "POST",
+            data: resumeData
+        }).then(res => {
+            // Refresh the page after the resume has been uploaded
+            localStorage.removeItem("RCB_RESUME_EXISTS_INFO");
+            localStorage.setItem("RCB_CURRENT_RESUMES", JSON.stringify(res.data));
+            window.location.reload();
+            console.log(res.data)
+        });
+    }
+    
+     render() {
+        //  Get the user's ID
+         const currentUserId = (localStorage.getItem("RCB_CURRENT_RESUMES") === null) ? 0 : 
+         (JSON.parse(localStorage.getItem("RCB_CURRENT_RESUMES")))._id;
+
         return (
             <div >
                 <div style={{ minHeight: 495 }} className="card blue-grey lighten-1">
@@ -47,6 +73,8 @@ class UserAbout extends React.Component {
                                                     key={index}
                                                     professionName={profession.professionName}
                                                     resumeLink={profession.resumeLink}
+                                                    userid={currentUserId}
+                                                    processDelete={this.processDelete}
                                                 />
                                             ))
                                         }
