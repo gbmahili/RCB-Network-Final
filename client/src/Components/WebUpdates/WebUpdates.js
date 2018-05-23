@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBar from '../Home/NavBar';
 import May202018 from './May-20-18';
+import May242018 from './May-24-18';
 
 
 class WhatsNew extends React.Component {
@@ -28,14 +29,11 @@ class WhatsNew extends React.Component {
               <div className="col s12 m8 offset-m2">
                 <div className="update-page-main-bg-color">
                   <ul className="collapsible" style={{marginBottom: 200,}}>
+                    {/* Added option to delete a resume */}
+                    <May242018 />
                   {/* May 20, 2018 Updates ...file is located here: import May202018 from './May-20-18'*/}
                     <May202018 />
-                    <May202018 />
-                    <May202018 />
-                    <May202018 />
-                    <May202018 />
-                    <May202018 />
-                  {/* Next Update */}
+                  
                   </ul>
                 </div>
               </div>

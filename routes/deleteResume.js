@@ -3,7 +3,6 @@ const mongoose = require("../controllers/mongoose");
 module.exports = app => {
   app.post('/deleteResume', (req, res) => {
     let resumeData = req.body;
-    console.log(resumeData)
     let query =[ { _id: resumeData.userId }, 
       { $pull: { professions: { resumeLink: resumeData.resumeLink} } },
       { multi: true }];
