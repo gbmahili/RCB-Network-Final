@@ -56,3 +56,22 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none; 
   margin: 0; 
 }
+
+/* New Resume Display List CSS - Baraka */
+.deleteBtn{
+  background-color: #BFC6D0;
+  color: #FCFCFE;
+}
+
+.downloadBtn{
+  background-color: #49BEAB;
+  color: #FCFCFE;
+}
+.downloadBtn:hover, .deleteBtn:hover{
+  opacity: 0.8
+}
+
+.deleteBtn:hover{
+    background-color: red;
+    color: white;
+}
