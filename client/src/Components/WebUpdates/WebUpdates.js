@@ -27,8 +27,13 @@ class WhatsNew extends React.Component {
           <div className="row">
               <div className="col s12 m8 offset-m2">
                 <div className="update-page-main-bg-color">
-                  <ul className="collapsible">
+                  <ul className="collapsible" style={{marginBottom: 200,}}>
                   {/* May 20, 2018 Updates ...file is located here: import May202018 from './May-20-18'*/}
+                    <May202018 />
+                    <May202018 />
+                    <May202018 />
+                    <May202018 />
+                    <May202018 />
                     <May202018 />
                   {/* Next Update */}
                   </ul>
