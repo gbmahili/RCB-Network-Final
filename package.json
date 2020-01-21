@@ -31,6 +31,6 @@
     "cors": "^2.8.4",
     "express-fileupload": "^0.4.0",
     "concurrently": "^3.5.1",
-    "react-scripts": "1.1.1"
+    "react-scripts": "3.0.0"
   }
 }
