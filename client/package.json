@@ -5,8 +5,8 @@
   "proxy": "http://127.0.0.1:3001",
   "dependencies": {
     "axios": "^0.18.0",
-    "react": "^16.3.1",
-    "react-dom": "^16.3.1",
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4",
     "react-dropzone": "^4.2.9",
